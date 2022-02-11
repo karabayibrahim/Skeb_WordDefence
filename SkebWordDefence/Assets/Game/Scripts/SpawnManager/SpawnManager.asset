@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b80b2bb9f53d1548b30106e84b6e8f6, type: 3}
   m_Name: SpawnManager
   m_EditorClassIdentifier: 
-  SpawnObject: {fileID: 0}
+  SpawnObject: {fileID: 9181768988073271404, guid: ea42eec8e18b40149b7366de2358e503,
+    type: 3}
+  WoodTower: {fileID: 543052904882455160, guid: 79a88c2b4485eec488a680519ac00b2e,
+    type: 3}
+  StoneTower: {fileID: 8058819857766886312, guid: e9214f889df1e814b8689b896a77d9a8,
+    type: 3}
+  ConcreateTower: {fileID: 8363855399515220872, guid: 9b0ec59a632533642af565db14dbe2e1,
+    type: 3}
+  LaserTower: {fileID: 3338259061965816633, guid: 0bee550c7c1100c489e9fe11c3e4ff16,
+    type: 3}

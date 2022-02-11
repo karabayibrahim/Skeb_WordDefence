@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float _speed=-5f;
-    
+    private float _speed=-7f;
+    private PlayerState _playerState;
+    private Animator _anim;
 
     public float Speed
     {
@@ -22,9 +24,43 @@ public class PlayerController : MonoBehaviour
             _speed = value;
         }
     }
+
+    public PlayerState PlayerState
+    {
+        get
+        {
+            return _playerState;
+        }
+        set
+        {
+            if (PlayerState==value)
+            {
+                return;
+            }
+            _playerState = value;
+            OnStateChanged();
+        }
+    }
+
+    private void OnStateChanged()
+    {
+        switch (PlayerState)
+        {
+            case PlayerState.IDLE:
+                _anim.CrossFade("Idle", 0.05f);
+                break;
+            case PlayerState.RUN:
+                _anim.CrossFade("Run", 0.05f);
+                break;
+            default:
+                break;
+        }
+    }
+
     void Start()
     {
-
+        _anim = GetComponent<Animator>();
+        PlayerState = PlayerState.RUN;
     }
 
     // Update is called once per frame
