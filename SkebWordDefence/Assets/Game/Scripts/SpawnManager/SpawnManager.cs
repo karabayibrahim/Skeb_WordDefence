@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
 public class SpawnManager : ScriptableObject
 {
@@ -11,6 +11,7 @@ public class SpawnManager : ScriptableObject
     public GameObject StoneTower;
     public GameObject ConcreateTower;
     public GameObject LaserTower;
+    public GameObject TowerG;
 
     private float _pozY;
 
@@ -22,7 +23,7 @@ public class SpawnManager : ScriptableObject
         var newNpc = Instantiate(SpawnObject, new Vector3(PozX, 0, PozZ), Quaternion.identity);
         newNpc.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
-    public void StoneSpawn(int _wordCount,float _pozZ)
+    public void StoneSpawn(int _wordCount, float _pozZ)
     {
         var tower = TowerAssigment(_wordCount);
         float PozX;
@@ -36,16 +37,18 @@ public class SpawnManager : ScriptableObject
         {
             PozX = _wordCount;
         }
+        var myTowerG = Instantiate(TowerG, new Vector3(PozX, _pozY, PozZ), Quaternion.identity);
         for (int i = 0; i < _wordCount / 2; i++)
         {
             if (i == 0)
             {
-                var newTower=Instantiate(tower, new Vector3(PozX, _pozY, PozZ),Quaternion.identity);
-                if (_wordCount%2!=0)
+                var newTower = Instantiate(tower, new Vector3(PozX, _pozY, PozZ), Quaternion.identity,myTowerG.transform);
+                StartScaleEffeckt(newTower);
+                if (_wordCount % 2 != 0&& _wordCount <= 3f)
                 {
                     newTower.GetComponent<Tower>().LeftTower.SetActive(true);
                 }
-                if (_wordCount<=3f)
+                if (_wordCount <= 3f)
                 {
                     newTower.transform.rotation = Quaternion.Euler(0, 90, 0);
                 }
@@ -56,7 +59,8 @@ public class SpawnManager : ScriptableObject
                 if ((i == _wordCount / 2 - 1) && _wordCount % 2 != 0)
                 {
                     Debug.Log("Tek");
-                    var newTower = Instantiate(tower, new Vector3(PozX - (i * 4), _pozY,PozZ),Quaternion.identity);
+                    var newTower = Instantiate(tower, new Vector3(PozX - (i * 4), _pozY, PozZ), Quaternion.identity, myTowerG.transform);
+                    StartScaleEffeckt(newTower);
                     if (_wordCount <= 3f)
                     {
                         newTower.transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -69,7 +73,8 @@ public class SpawnManager : ScriptableObject
                 else
                 {
                     Debug.Log("Çift");
-                    var newTower=Instantiate(tower, new Vector3(PozX - (i * 4), _pozY, PozZ), Quaternion.identity);
+                    var newTower = Instantiate(tower, new Vector3(PozX - (i * 4), _pozY, PozZ), Quaternion.identity, myTowerG.transform);
+                    StartScaleEffeckt(newTower);
                     if (_wordCount <= 3f)
                     {
                         newTower.transform.rotation = Quaternion.Euler(0, 90, 0);
@@ -82,17 +87,17 @@ public class SpawnManager : ScriptableObject
 
     private GameObject TowerAssigment(int _wordCount)
     {
-        if (_wordCount<=3)
+        if (_wordCount <= 3)
         {
             PozYAssigment(0.9f);
             return WoodTower;
         }
-        else if (_wordCount>3&&_wordCount<6)
+        else if (_wordCount > 3 && _wordCount < 6)
         {
             PozYAssigment(1.3f);
             return StoneTower;
         }
-        else if (_wordCount>5&&_wordCount<8)
+        else if (_wordCount > 5 && _wordCount < 8)
         {
             PozYAssigment(1f);
             return ConcreateTower;
@@ -108,5 +113,15 @@ public class SpawnManager : ScriptableObject
     {
         _pozY = pozY;
         return _pozY;
+    }
+
+    private void StartScaleEffeckt(GameObject _obj)
+    {
+        Vector3 startScale = _obj.transform.localScale;
+        _obj.transform.localScale = new Vector3(0, 0, 0);
+        _obj.transform.DOScale(startScale, 0.5f).SetEase(Ease.OutBack).OnComplete(()=>
+        {
+            _obj.GetComponent<Tower>().GuardPositionFixed();
+        });
     }
 }

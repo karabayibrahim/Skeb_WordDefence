@@ -89,13 +89,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5157492053842802257}
   - component: {fileID: 2641733800941903542}
+  - component: {fileID: 5501770167429948146}
   m_Layer: 0
   m_Name: SolTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5157492053842802257
 Transform:
   m_ObjectHideFlags: 0
@@ -124,8 +125,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9772416, y: 3.6059775, z: 2.4993534}
-  m_Center: {x: -0.05011493, y: 0.38839078, z: -0.0013437271}
+  m_Size: {x: 1.9772416, y: 3.6059775, z: 3.2971382}
+  m_Center: {x: -0.05011493, y: 0.38839078, z: 0.39754868}
+--- !u!65 &5501770167429948146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059710657709911785}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8865876, y: 3.5857892, z: 1}
+  m_Center: {x: -0.01683402, y: 0.39721656, z: 0}
 --- !u!1 &4172921945555555924
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +422,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.1320987, y: 3.5963454, z: 2.4842625}
-  m_Center: {x: -1.0989816, y: 0.4052503, z: 0.0020132065}
+  m_Size: {x: 4.1320987, y: 3.5963454, z: 3.0162296}
+  m_Center: {x: -1.0989816, y: 0.4052503, z: 0.2679968}
 --- !u!1 &8058819857766886312
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7250088800800436498}
   - component: {fileID: 8417044530926553802}
+  - component: {fileID: 7912168498241820776}
   m_Layer: 0
   m_Name: kuletas
   m_TagString: Tower
@@ -457,6 +472,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftTower: {fileID: 2059710657709911785}
+  MyGuards: []
+  MyType: 1
+--- !u!65 &7912168498241820776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8058819857766886312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.21643, y: 3.5834103, z: 1.9238682}
+  m_Center: {x: -1.1291721, y: 0.38494492, z: -0.03421688}
 --- !u!1 &8404861678615386267
 GameObject:
   m_ObjectHideFlags: 0

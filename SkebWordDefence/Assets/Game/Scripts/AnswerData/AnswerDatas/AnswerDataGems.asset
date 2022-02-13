@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataGems
+  m_EditorClassIdentifier: 
+  Answers: Abalone Pearl Chiastolite Kashmir Sapphire Rosaline Achroite Chloromelanite
+    Keshi Pearl Rose Beryl Adelaide Ruby Chrome Chalcedony Killiecrankie Diamond
+    Rose Gold African Emerald Chrome Diopside Kimberly Emerald Rose Kunzite African
+    Jade Chrome Tourmaline Kingman Turquoise Rose Quartz Agate Chrysoberyl Cat's
+    Eye Kinradite Rosinca Agate Geode Chrysolite Korean Jade Rosolite Agate Jasper
+    Chrysomelanite Kunzite Rubellite Akoya Pearl Chrysopal Laguna Agate Rubicelle
+    Alabandine Ruby Chrysoprase Lapis Ruby Copper Alamandine Cinn Lavender Jade Ruby
+    Fuschite Alaska Black Diamond Citrine Lazurite Ruby Garnet Alexandrine Citrine
+    Topaz Lemon Opal Ruby Spinel Alexandrite Claro Opal Lemon Quartz Ruby Zoisite
+    Alexandrite Garnet Clinothulite Leopard Jasper Russian Jade Alexandrite Sapphire
+    Colombian Emerald Leuco-Garnet Russian Jasper Almandine Spinel Colorado Jade
+    Lightning Ridge Opal Rutilated Quartz Almandite Colorado Ruby Linde Emerald Rutilated
+    Topaz Amatrix Color-Change Garnet Lithia Emerald Rutile Quartz Amazon Jade Color-Change
+    Sapphire London Blue Topaz Sagenite Agate Amazon Stone Common Opal Lux Sapphire
+    Saltwater Pearl Amazonstone Condor Agate Lynx Sapphire Sapphire Quartz Amberoid
+    Congo Emerald Mabe Pearl Sapphire Spinel American Ruby Copal Madeira Topaz Sapphire
+    Spinel Amethyst Copper Ruby Malaia Garnet Sard Amethyst Quartz Cornelian Malaya
+    Garnet Sardonyx Ametrine Cornflower Blue Sapphire Mali Garnet Scallop Pearl Ancona
+    Ruby Cornish Diamond Mandarin Garnet Schorl Andamooka Opal Cortez Pearl Mandarin
+    Spessartite Sherry Topaz Andesine-Labradorite Corundum Marmorosch Diamond Siam
+    Aquamarine Anyolite Crazy Lace Agate Marra Mamba Tiger's Eye Siberian Ruby Aquamarine
+    Csarite Mascot Emerald Siberite Arizona Ruby Cultured Pearl Mass Aqua Silver
+    Topaz Arizona Tiger's Eye Cyanite Matura Diamond Simetite Arkansas Diamond Cymophane
+    Medina Emerald Slocum Stone Australian Jade Czochralski Alexandrite Melanite
+    Smokey Quartz Australian Ruby Dauphine Diamond Melo Pearl Smoky Quartz Australian
+    Sapphire Demantoid Mexican Fire Opal Smoky Topaz Aventurine Dendritic Agate Milky
+    Quartz Snakeskin Agate Aventurine Feldspar Deschutes Jasper Mint Garnet South
+    African Emerald Aventurine Quartz Dichroite Montana Ruby South African Jade Azotic
+    Topaz Dominican Amber Morgan Hill Jasper South Sea Pearl Azure-Malachite Dravite
+    Morganite Spanish Emerald Baffa Diamond Dumortierite Quartz Morion Spanish Topaz
+    Bahia Blue Quartz Egyptian Jasper Morrisonite Spectrolite Bahia Topaz Eilat Stone
+    Moss Agate Spessartine Balas Ruby Elbaite Moss Jasper Spinel Ruby Baltic Amber
+    Elie Ruby Moss Opal Spinell Banded Opal Emerald Mount Saint Helen's Emerald Star
+    Diopside Bengal Amethyst Emeraldine Mozambique Garnet Star Emerald Bi-Colored
+    Sapphire Emeraldite Mozambique Ruby Star Garnet Biggs Jasper Endura Emerald Mystic
+    Topaz Star Moonstone Binghamite Essonite Namibian Spessartite Star Rose Quartz
+    Biron Emerald Evening Emerald Natural Pearl Star Ruby Bixbite Evening Emerald
+    Navajo Turquoise Star Sapphire Black Coral Eye Agate Nerchinsk Aquamarine Star
+    Sunstone Black Diamond False Topaz Nevada Opal Star Topaz Black Onyx Fancy Nickel
+    Silver Starlite Black Opal Fancy Sapphire Night Emerald Sterling Silver Black
+    Pearl Ferrer's Emerald Noble Orthoclose Stone Canyon Jasper Blood Jasper Fire
+    Agate Occidental Turquoise Strass Diamond Bloodstone Fire Opal Ocean Jasper Strawberry
+    Quartz Blue Alexandrite Flame Spinel Olivine Succinite Blue Amber Flash Opal
+    Onyx Swarovski Diamond Blue Denim Stone Fluorspar Onyx Agate Swiss Blue Topaz
+    Blue Denim Stone Fool's Gold Onyx Opal Swiss Lapis Blue Gold Fortification Agate
+    Opal Tahiti Pearl Blue John Fossil Turquoise Opal Jasper Tahitian Pearl Blue
+    Kunzite Freshwater Pearl Opal Matrix Tangerine Garnet Blue Lace Agate Gahnospinel
+    Orbicular Jasper Tanzanite Blue Moon Quartz Garnet Jade Oregon Jade Tashmarine
+    Diopside Blue Quartz Garnet Ruby Oregon Sunstone Tecla Emerald Blue Spinel Geneva
+    Ruby Oriental Amethyst Thulite Blue Tiger's Eye German Silver Oriental Cat's
+    Eye Tiger Eye Blue Zoisite Gilson Emerald Oriental Emerald Tiger Iron Bohemian
+    Emerald Gilson Lapis Oriental Pearl Tigereye Bohemian Garnet Gilson Opal Oriental
+    Peridot Tigers Eye Bohemian Ruby Gold Sapphire Oriental Topaz Tiger's Eye Bone
+    Turquoise Gold Topaz Oriental White Sapphire Tiger's Eye Matrix Bony Amber Golden
+    Beryl Owyhee Jasper Topaz Quartz Bort Gooseberry Garnet Padparadschah Topazolite
+    Botswana Agate Goshenite Paraiba Tourmaline Tourmalinated Quartz Boulder Opal
+    Green Amethyst Pecos Diamond Traansvaal Emerald Brazilian Aquamarine Green Gold
+    Persian Turquoise Transvaal Jade Brazilian Emerald Green Jasper Petschite Trapiche
+    Emerald Brazilian Ruby Grossularite Pezzottaite Triphane Brazilian Sapphire Hackmanite
+    Piconite Tsavorite Brazilian Topaz Halfbreed Picotite Turquoise Odontolite Brecciated
+    Jasper Harlequin Opal Picture Jasper Ultralite Bristol Diamond Hawk's Eye Pigeon's
+    Blood Ruby Umba Garnet Britannia Silver Heliodor Pinfire Opal Umbalite Broghton
+    Emerald Heliodorite Pink Beryl Uralian Emerald Bruneau Jasper Heliotrope Pink
+    Emerald Uralian Sapphire Burma Ruby Herkimer Diamond Plasma Utahlite Burma Sapphire
+    Hessonite Pleonast Utahlite Burmese Sapphire Hiddenite Pleonaste Vallum Diamond
+    Burmese Ruby Holly Blue Poppy Jasper Variscite Quartz Burmite Honey Opal Prase
+    Verdelite Cairngorm Hope Sapphire Prasiolite Vermeil California Ruby Hot Springs
+    Diamond Precious Cat's Eye Verneuil Ruby Canary Diamond Hungarian Opal Precious
+    Coral Verneuil Sapphire Canary Tourmaline Hyacinth Precious Fire Opal Violane
+    Cape Emerald Hyalite Precious Garnet Virgin Valley Opal Cape May Diamond Hydrogrossular
+    Precious Garnet Viridine Cape Ruby Imperial Garnet Precious Opal Wascoite Carbuncle
+    Imperial Jade Precious Topaz Water Sapphire Carnelian Imperial Topaz Pressed
+    Amber Watermelon Tourmaline Carnelian Agate Inca Rose Quartz Wax Opal Carnelian
+    Onyx Indian Emerald Rainbow Moonstone White Cliffs Opal Cat's Eye Indian Jade
+    Raspberry Beryl White Gold Cat's Eye Aquamarine Indian Topaz Raspberry Garnet
+    White Opal Cat's Eye Emerald Indicolite Red Beryl White Topaz Cat's Eye Moonstone
+    Indigolite Red Coral Wiluite Cat's Eye Quartz Iris Agate Red Fire Quartz Yellow
+    Gold Cat's Eye Tourmaline Jacinth Red Labradorite Yellow Kunzite Catseye Jargon
+    Regency Emerald Yellow Tanzanite Cave Creek Jasper Jargoon Rhodolite Yowah Nut
+    Cesium Beryl Jasper Riband Jasper Zabeltitzen Diamond Ceylon Sapphire Jasper
+    Jade Ribbon Jasper Zambian Emerald Chalcedony Jaspilite Rock Crystal Zebra Jasper
+    Chathan Emerald Jelly Opal Rocky Mountain Ruby Zerfass Emerald Cherry Opal Jourado
+    Diamond Rogueite Zultanite

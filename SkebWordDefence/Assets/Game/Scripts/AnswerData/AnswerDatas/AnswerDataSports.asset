@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataSports
+  m_EditorClassIdentifier: 
+  Answers: Acrobatics Aerobic Gymnastics Archery Arnis Artistic Gymnastics Artistic
+    Swimming Badminton Baseball Basketball Baton Twirling Bicycle Motocross BMX Billiards
+    Pool Bobsleigh Bodybuilding Bowling Boxing Canoeing Car Racing Cheerleading Chess
+    Cricket Croquet Curling Dance Sport Darts Diving Dodgeball Fencing Figure Skating
+    Football Soccer Frisbee Golf Handball Hang Gliding Hockey Horseback Riding Horse
+    Racing Ice Hockey Ice Skating Jet Ski Racing Judo Karate Kayaking Kendo Kick
+    Boxing Kite Surfing Lacrosse Luge Mixed Martial Arts Motocross Muay Thai Paintball
+    Parachuting Paragliding Parkour Polo Pool/Billiards Powerlifting Rafting Rhythmic
+    Gymnastics Rock Climbing Rowing Rugby Sailing Sandboarding Scuba Diving Shooting
+    Skateboarding Skeleton Skiing Snowboarding Softball Speed Skating Sport Climbing
+    Squash Sumo Wrestling Surfing Swimming Synchronized Skating Synchronized Swimming
+    Table Tennis Taekwondo Tennis Track and Field Trampolining Triathlon Tetrathlon
+    Tug of War Volleyball Water Polo Weightlifting Windsurfing Wrestling Wu Shu

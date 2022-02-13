@@ -5,11 +5,14 @@ using DG.Tweening;
 public class NpcShotController : MonoBehaviour
 {
     private NpcState _npcState;
+    private int _enemyCount;
     private Animator _anim;
     private Transform _targetObj;
+    private Tween BulletTween;
     public List<NpcController> Enemys = new List<NpcController>();
     public GameObject Bullet;
-
+    public Transform StartShootPoz;
+    public bool AttackStatus = false;
 
 
     public NpcState NpcState
@@ -31,9 +34,8 @@ public class NpcShotController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<NpcController>()!=null)
+        if (other.gameObject.GetComponent<NpcController>() != null)
         {
-            Debug.Log("Düşman");
             Enemys.Add(other.gameObject.GetComponent<NpcController>());
             TargetMethod();
         }
@@ -44,7 +46,7 @@ public class NpcShotController : MonoBehaviour
         if (other.gameObject.GetComponent<NpcController>() != null)
         {
             Enemys.Remove(other.gameObject.GetComponent<NpcController>());
-            //TargetMethod();
+            BulletTween.Kill(true);
         }
     }
 
@@ -70,12 +72,13 @@ public class NpcShotController : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         GameManager.Instance.ShotSystem.Shooters.Add(this);
+        transform.localPosition = new Vector3(transform.localPosition.x, 2.2f, transform.localPosition.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Enemys.Count==0)
+        if (Enemys.Count <= 0)
         {
             NpcState = NpcState.IDLE;
         }
@@ -83,17 +86,30 @@ public class NpcShotController : MonoBehaviour
 
     public void TargetMethod()
     {
+        NpcRemoveList();
         var index = Random.Range(0, Enemys.Count);
         var targetObj = Enemys[index];
         _targetObj = targetObj.transform;
-        gameObject.transform.DOLookAt(targetObj.transform.position, 0.1f);
+        //gameObject.transform.DOLookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z), 0.1f);
+        transform.LookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z));
         NpcState = NpcState.SHOT;
+
+
     }
 
     public void ShotMethod()
     {
-        var newBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
+        var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);
         newBullet.transform.DOLookAt(_targetObj.transform.position, 0.01f);
-        newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+        BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+    }
+
+    public void NpcRemoveList()
+    {
+        for (var i = Enemys.Count - 1; i > -1; i--)
+        {
+            if (Enemys[i] == null)
+                Enemys.RemoveAt(i);
+        }
     }
 }

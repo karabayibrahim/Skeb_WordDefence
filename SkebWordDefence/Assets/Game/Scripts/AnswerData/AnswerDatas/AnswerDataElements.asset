@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataElements
+  m_EditorClassIdentifier: 
+  Answers: actinium aluminium americium antimony argon arsenic astatine barium berkelium
+    beryllium bismuth bohrium boron bromine cadmium calcium californium carbon cerium
+    cesium chlorine chromium cobalt copernicium copper curium darmstadtium dubnium
+    dysprosium einsteinium erbium europium fermium flerovium fluorine francium gadolinium
+    gallium germanium gold hafnium hassium helium holmium hydrogen indium iodine
+    iridium iron krypton lanthanum lawrencium lead lithium livermorium lutetium magnesium
+    manganese meitnerium mendelevium mercury molybdenum moscovium neodymium neon
+    neptunium nickel nihonium niobium nitrogen nobelium oganesson osmium oxygen palladium
+    phosphorus platinum plutonium polonium potassium praseodymium promethium protactinium
+    radium radon rhenium rhodium roentgenium rubidium ruthenium rutherfordium samarium
+    scandium seaborgium selenium silicon silver sodium strontium sulfur tantalum
+    technetium tellurium tennessine terbium thallium thorium thulium tin titanium
+    tungsten uranium vanadium xenon ytterbium yttrium zinco zirconium

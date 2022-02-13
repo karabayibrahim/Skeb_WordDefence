@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataCarBrands
+  m_EditorClassIdentifier: 
+  Answers: "Tesla BMW Ferrari Ford Porsche Honda Lamborghini Toyota Bentley Maserati
+    Audi Jeep Subaru Cadillac Chrysler Chevrolet Corvette Dodge Hyundai Jaguar Mazda
+    Ford Mustang Nissan Alfa Romeot Bugatti Buick Lexus Rolls-Royce Acura Aston Martin
+    Chevrolet Kia Mercedes-Benz Volkswagen Volvo McLaren Mitsubishi GMC Infiniti
+    Lincoln Peugeot Pontiac Saab Genesis Suzuki Citro\xEBn Fiat Lotus Mini Peterbilt
+    Saturn BMW M General Motors Kenworth KTM Land Rover Maybach Mercury Oldsmobile
+    Renault Dodge Viper Koenigsegg Mack Scion \u0160koda Daewoo Daimler Opel Datsun
+    Holden Smart Alpine DS Navistar Nissan Nismo Pagani Rover Vauxhall Ariel Isuzu
+    Paccar Tata Abarth Hummer SEAT Karma Lucid Saleen Studebaker Western Star Mercedes-AMG
+    Hennessey Audi Sportt Dacia Daihatsu Fisker Geo Hino Scania Sterling Packard
+    Great Wall Eicher International IH RAM ABT BYD Geely Lada Noble Polestar MG VinFast
+    SsangYong Alpina Brabus Jetta MAZ SAIC Motor MAN VLF Vencer Elemental Faraday
+    Future Rimac SSC DeSoto GAC Group Irizar Hongqi NIO Rivian WEY ERF Spyker Toyota
+    Crown Suffolk De Tomaso Freightliner IC Bus Tramontana Arash Artega Gumpert Tucker
+    Wuling Sisu Carlsson Troller Tauro Sport Auto Tatra Spania GTA Vector Ascari
+    Lagonda Mansory Panoz Rossion Canoo Arrival Lordstown Arrinera BharatBenz Haval
+    Mahindra Mosler Trion Duesenberg Changan Chery GAZ Laraki Perodua Rezvani RUF
+    TechArt Brilliance David Brown Hindustan Motors Iveco Keating LEVC Mazzanti TVR
+    Zenvo Lynk & Co Arcfox Toyota Century Toyota Alphard Li Auto XPeng Weltmeister
+    Nikola Workhorse Singulato NEVS Bestune Exeed Geometry 9ff Aixam Apollo Autobacs
+    BAIC Motor Baojun Bertone Borgward Brammo Caparo Caterham DAF Devel Sixteen DINA
+    Dongfeng Edsel FAW Foton Ginetta Grinnall Nissan GT-R HSV Kamaz Lancia Ligier
+    Lister Luxgen Melkus Microcar Mitsuoka Oltcit OSCA Pininfarina Praga Prodrive
+    Proton Qoros Radical Renault Samsung Setra"

@@ -22,9 +22,11 @@ public class Bullet : MonoBehaviour
         {
             
             //Destroy();
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
             GameManager.Instance.ShotSystem.RemoveNpc(other.gameObject.GetComponent<NpcController>());
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
+        Destroy(gameObject);
     }
 }

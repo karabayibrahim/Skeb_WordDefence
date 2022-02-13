@@ -22,3 +22,4 @@ MonoBehaviour:
     type: 3}
   LaserTower: {fileID: 3338259061965816633, guid: 0bee550c7c1100c489e9fe11c3e4ff16,
     type: 3}
+  TowerG: {fileID: 4417229963071272947, guid: 61849ad03f849ef4b9ea3953791e8bb5, type: 3}

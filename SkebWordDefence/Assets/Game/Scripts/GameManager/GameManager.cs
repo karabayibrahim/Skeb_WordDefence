@@ -7,6 +7,7 @@ public class GameManager : MonoSingleton<GameManager>
     public PlayerController Player;
     public SpawnManager SpawnManager;
     public ShotSystem ShotSystem;
+    public AnswerData AnswerData;
     public int SpawnCount;
     public int WordCount;
     void Start()
@@ -23,7 +24,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SpawnManager.StoneSpawn(WordCount,Player.transform.position.z+10f);
+            
         }
     }
 }

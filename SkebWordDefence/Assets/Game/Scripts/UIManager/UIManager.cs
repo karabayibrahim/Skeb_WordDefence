@@ -17,8 +17,19 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void Answer()
+    public void AnswerControl()
     {
-        Debug.Log(AnswerInput.text.Length);
+        string answerdatastring = GameManager.Instance.AnswerData.Answers.ToLower();
+        string playerInput = AnswerInput.text.ToLower();
+        if (answerdatastring.Contains(""+playerInput+""))
+        {
+            var textCount = playerInput.Length;
+            if (textCount>9)
+            {
+                textCount = 9;
+            }
+            GameManager.Instance.Player.AnswerStatus(textCount);
+            Debug.Log("Var");
+        }
     }
 }

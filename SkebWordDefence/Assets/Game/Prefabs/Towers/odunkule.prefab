@@ -123,8 +123,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8259499, y: 3.076037, z: 1.837111}
-  m_Center: {x: -0.011161774, y: 0.63620496, z: 0.01674211}
+  m_Size: {x: 2.2771027, y: 3.076037, z: 1.837111}
+  m_Center: {x: 0.2144146, y: 0.63620496, z: 0.01674211}
 --- !u!1 &543052904882455160
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftTower: {fileID: 498824629193706518}
+  MyGuards: []
 --- !u!1 &1098122801305041530
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,8 +222,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7767899, y: 3.060467, z: 4.2298074}
-  m_Center: {x: -0.01022175, y: 0.6520597, z: -1.165184}
+  m_Size: {x: 2.3407297, y: 3.060467, z: 4.2298074}
+  m_Center: {x: 0.2717483, y: 0.6520597, z: -1.165184}
 --- !u!1 &2350855624520103391
 GameObject:
   m_ObjectHideFlags: 0

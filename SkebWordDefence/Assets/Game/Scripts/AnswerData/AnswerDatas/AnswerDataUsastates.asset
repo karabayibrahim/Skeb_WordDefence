@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataUsastates
+  m_EditorClassIdentifier: 
+  Answers: Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware
+    Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana
+    Maine Maryland Massachusetts Michigan Minnesota Mississippi Missouri Montana
+    Nebraska Nevada New Hampshire New Jersey New Mexico New York North Carolina North
+    Dakota Ohio Oklahoma Oregon Pennsylvania Rhode Island South Carolina South Dakota
+    Tennessee Texas Utah Vermont Virginia Washington West Virginia Wisconsin Wyoming

@@ -73,4 +73,9 @@ public class PlayerController : MonoBehaviour
     {
         transform.Translate(0, 0, _speed * Time.deltaTime);
     }
+
+    public void AnswerStatus(int _wordCount)
+    {
+        GameManager.Instance.SpawnManager.StoneSpawn(_wordCount,transform.position.z + 1f);
+    }
 }
