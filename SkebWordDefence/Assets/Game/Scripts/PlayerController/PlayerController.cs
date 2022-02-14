@@ -71,11 +71,11 @@ public class PlayerController : MonoBehaviour
 
     private void MoveSystem()
     {
-        transform.Translate(0, 0, _speed * Time.deltaTime);
+        transform.Translate(0, 0, -_speed * Time.deltaTime);
     }
 
     public void AnswerStatus(int _wordCount)
     {
-        GameManager.Instance.SpawnManager.StoneSpawn(_wordCount,transform.position.z + 1f);
+        //GameManager.Instance.SpawnManager.StoneSpawn(_wordCount,transform.position.z + 1f);
     }
 }

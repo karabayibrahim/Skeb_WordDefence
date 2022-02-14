@@ -5,9 +5,8 @@ using UnityEngine;
 using DG.Tweening;
 public class Tower : MonoBehaviour
 {
-    public GameObject LeftTower;
+   // public GameObject LeftTower;
     public List<NpcShotController> MyGuards = new List<NpcShotController>();
-    public TowerType MyType;
     void Start()
     {
 

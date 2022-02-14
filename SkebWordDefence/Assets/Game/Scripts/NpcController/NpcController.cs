@@ -5,12 +5,13 @@ using UnityEngine;
 using DG.Tweening;
 public class NpcController : MonoBehaviour
 {
-    private float _speed = 8f;
+    public float _speed = 8f;
     private NpcState _npcState;
     private Animator _anim;
     private bool _attackControl = false;
+    private bool _deadStatus = false;
 
-    public Tower AttackTower;
+    public TowerG AttackTower;
     public float Speed
     {
         get
@@ -57,8 +58,14 @@ public class NpcController : MonoBehaviour
                 break;
             case NpcState.ATTACK:
                 _attackControl = true;
-                Speed = 0f;
+                Speed = 6.5f;
                 _anim.CrossFade("Attack", 0.05f);
+                _anim.SetLayerWeight(1, 1);
+                break;
+            case NpcState.DEAD:
+                _deadStatus = true;
+                Speed = 0f;
+                _anim.CrossFade("Dead", 0.05f);
                 break;
             default:
                 break;
@@ -77,6 +84,11 @@ public class NpcController : MonoBehaviour
     {
         MoveSystem();
         PlayerControl();
+        if (AttackTower==null&&!_deadStatus)
+        {
+            NpcState = NpcState.RUN;
+            _anim.SetLayerWeight(1, 0);
+        }
         //Debug.Log(Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position));
     }
 
@@ -90,11 +102,19 @@ public class NpcController : MonoBehaviour
         switch (AttackTower.MyType)
         {
             case TowerType.WOOD:
+                if (AttackTower != null)
+                {
+                    AttackTower.Healt -= 20f;
+                }
+                else
+                {
+                    NpcState = NpcState.RUN;
+                }
                 break;
             case TowerType.STONE:
                 if (AttackTower!=null)
                 {
-                    AttackTower.GetComponentInParent<TowerG>().Healt -= 10f;
+                    AttackTower.Healt -= 10f;
                 }
                 else
                 {
@@ -102,8 +122,24 @@ public class NpcController : MonoBehaviour
                 }
                 break;
             case TowerType.CONCREATE:
+                if (AttackTower != null)
+                {
+                    AttackTower.Healt -= 7f;
+                }
+                else
+                {
+                    NpcState = NpcState.RUN;
+                }
                 break;
             case TowerType.LASER:
+                if (AttackTower != null)
+                {
+                    AttackTower.Healt -= 5f;
+                }
+                else
+                {
+                    NpcState = NpcState.RUN;
+                }
                 break;
             default:
                 break;
@@ -114,20 +150,24 @@ public class NpcController : MonoBehaviour
     {
         if (other.gameObject.tag == "Tower")
         {
-            AttackTower = other.GetComponentInParent<Tower>();
+            AttackTower = other.GetComponent<TowerG>();
             NpcState = NpcState.ATTACK;
         }
     }
 
     private void PlayerControl()
     {
-        if (!_attackControl)
+        if (!_attackControl&&!_deadStatus)
         {
-            if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 3f)
+            if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 5f)
             {
                 Speed = 7f;
             }
-            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 20f)
+            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 20f&& Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 30f)
+            {
+                Speed = 10f;
+            }
+            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 30f)
             {
                 Speed = 10f;
             }
@@ -137,10 +177,10 @@ public class NpcController : MonoBehaviour
                 //transform.DOLookAt(GameManager.Instance.Player.transform.position, 0.5f);
                 transform.LookAt(GameManager.Instance.Player.transform.position);
             }
-            else
-            {
-                Speed = 8f;
-            }
+            //else
+            //{
+            //    Speed = 8f;
+            //}
             
         }
 

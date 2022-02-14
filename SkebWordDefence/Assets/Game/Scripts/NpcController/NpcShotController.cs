@@ -13,7 +13,8 @@ public class NpcShotController : MonoBehaviour
     public GameObject Bullet;
     public Transform StartShootPoz;
     public bool AttackStatus = false;
-
+    private float fireRate = 0.1f;
+    private float lastShot = 0;
 
     public NpcState NpcState
     {
@@ -86,22 +87,28 @@ public class NpcShotController : MonoBehaviour
 
     public void TargetMethod()
     {
-        NpcRemoveList();
-        var index = Random.Range(0, Enemys.Count);
-        var targetObj = Enemys[index];
-        _targetObj = targetObj.transform;
-        //gameObject.transform.DOLookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z), 0.1f);
-        transform.LookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z));
-        NpcState = NpcState.SHOT;
-
-
+        if (gameObject!=null)
+        {
+            NpcRemoveList();
+            var index = Random.Range(0, Enemys.Count);
+            var targetObj = Enemys[index];
+            _targetObj = targetObj.transform;
+            //gameObject.transform.DOLookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z), 0.1f);
+            transform.LookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z));
+            NpcState = NpcState.SHOT;
+        }
     }
 
     public void ShotMethod()
     {
-        var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);
-        newBullet.transform.DOLookAt(_targetObj.transform.position, 0.01f);
-        BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+        if (Time.time > fireRate + lastShot)
+        {
+            lastShot = Time.time;
+            var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);
+            newBullet.transform.LookAt(_targetObj.transform.position);
+            BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+        }
+        
     }
 
     public void NpcRemoveList()

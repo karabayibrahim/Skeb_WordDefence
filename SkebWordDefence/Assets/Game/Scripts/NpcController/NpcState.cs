@@ -8,4 +8,5 @@ public enum NpcState
     RUN,
     ATTACK,
     SHOT,
+    DEAD,
 }

@@ -5,8 +5,8 @@ using DG.Tweening;
 public class TowerG : MonoBehaviour
 {
     private float _healt = 100f;
-
-
+    private float _speed = 7f;
+    public TowerType MyType;
     public float Healt
     {
         get
@@ -29,10 +29,10 @@ public class TowerG : MonoBehaviour
     {
         if (Healt <= 0)
         {
-            transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
-            {
-                Destroy(gameObject);
-            });
+            Destroy(gameObject);
+            //transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
+            //{
+            //});
         }
     }
     void Start()
@@ -43,6 +43,6 @@ public class TowerG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(0, 0, -_speed * Time.deltaTime);
     }
 }

@@ -20,11 +20,15 @@ public class ShotSystem : MonoBehaviour
     {
         foreach (var item in Shooters)
         {
-            item.Enemys.Remove(_npc);
-            if (item.Enemys.Count>0)
+            if (item!=null)
             {
-                item.TargetMethod();
+                item.Enemys.Remove(_npc);
+                if (item.Enemys.Count > 0)
+                {
+                    item.TargetMethod();
+                }
             }
+            
         }
     }
 }

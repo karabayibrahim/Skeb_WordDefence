@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnObject: {fileID: 9181768988073271404, guid: ea42eec8e18b40149b7366de2358e503,
     type: 3}
-  WoodTower: {fileID: 543052904882455160, guid: 79a88c2b4485eec488a680519ac00b2e,
-    type: 3}
-  StoneTower: {fileID: 8058819857766886312, guid: e9214f889df1e814b8689b896a77d9a8,
-    type: 3}
-  ConcreateTower: {fileID: 8363855399515220872, guid: 9b0ec59a632533642af565db14dbe2e1,
-    type: 3}
-  LaserTower: {fileID: 3338259061965816633, guid: 0bee550c7c1100c489e9fe11c3e4ff16,
-    type: 3}
-  TowerG: {fileID: 4417229963071272947, guid: 61849ad03f849ef4b9ea3953791e8bb5, type: 3}
+  Towers:
+  - {fileID: 8425717251520553058, guid: a959728ec80e9d641b3eb392cf32db11, type: 3}
+  - {fileID: 2214402744548211538, guid: fad7ef3d22762df4ea403c2078be0ed1, type: 3}
+  - {fileID: 3712082319952892264, guid: ea043d41b039ce8498670a9191b6516e, type: 3}
+  - {fileID: 126667765972593754, guid: bf36de77bfda5fe49a4260e04a7176ac, type: 3}
+  - {fileID: 3775298212665683801, guid: 9a5fdf6aa983f124a886a0d04fbcf3be, type: 3}
+  - {fileID: 3990105045556789046, guid: 4615c11a71e3be4498c02a37bee70fcc, type: 3}
+  - {fileID: 5199642882735886730, guid: ef4f8414bc94ece458e325869e1ab750, type: 3}
