@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public TMP_InputField AnswerInput;
     public TouchScreenKeyboard Keyboard;
     public List<string> OldAnswers = new List<string>();
-
+    public TextMeshProUGUI TextCountText;
     private bool _answerControl = false;
     void Start()
     {
@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     {
         if (TouchScreenKeyboard.visible==false&&Keyboard!=null)
         {
+            TextCountText.text = AnswerInput.text.Length.ToString();
             if (Keyboard.status==TouchScreenKeyboard.Status.Done)
             {
                 AnswerControl();
