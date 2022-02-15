@@ -606,7 +606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640611020}
-  m_LocalRotation: {x: -0.3310069, y: -0.000000027297597, z: 0.000000007513681, w: -0.9436284}
+  m_LocalRotation: {x: -0.33100694, y: 8.247231e-10, z: -0.0000000023510947, w: -0.9436284}
   m_LocalPosition: {x: 0, y: 25, z: 99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -894,7 +894,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.3310069, y: -0.000000027297597, z: 0.000000007513681, w: -0.9436284}
+  m_LocalRotation: {x: -0.33100694, y: 8.247231e-10, z: -0.0000000023510947, w: -0.9436284}
   m_LocalPosition: {x: 0, y: 25, z: 99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnswerInput: {fileID: 462704690}
+  OldAnswers: []
 --- !u!1 &1223492085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,9 +1464,10 @@ MonoBehaviour:
   SpawnManager: {fileID: 11400000, guid: c9e1fe2db7e9707439a09f361c574362, type: 2}
   ShotSystem: {fileID: 1223492086}
   AnswerData: {fileID: 11400000, guid: 1c61dc568582a574f93ae2d9c95c8388, type: 2}
+  UIManager: {fileID: 1213496309}
   NpcList: []
   SpawnCount: 100
-  WordCount: 5
+  WordCount: 8
   FirstSpawn: 0
 --- !u!4 &1775615745
 Transform:

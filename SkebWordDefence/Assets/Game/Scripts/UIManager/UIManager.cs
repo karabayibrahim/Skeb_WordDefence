@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public TMP_InputField AnswerInput;
     public TouchScreenKeyboard Keyboard;
+    public List<string> OldAnswers = new List<string>();
+
+    private bool _answerControl = false;
     void Start()
     {
         
@@ -28,9 +31,11 @@ public class UIManager : MonoBehaviour
     {
         string answerdatastring = GameManager.Instance.AnswerData.Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
-        if (answerdatastring.Contains(""+playerInput+"")&&answerdatastring.Length>0)
+        AnswerCheck(playerInput);
+        if (answerdatastring.Contains(""+playerInput+"")&&answerdatastring.Length>0&&!_answerControl)
         {
             Debug.Log("Var");
+            OldAnswers.Add(playerInput);
             var textCount = playerInput.Length;
             if (textCount>9)
             {
@@ -38,7 +43,7 @@ public class UIManager : MonoBehaviour
             }
             GameManager.Instance.FirstSpawn = true;
             GameManager.Instance.Player.AnswerStatus(textCount);
-            GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f);
+            GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f,playerInput);
             AnswerInput.text = "";
         }
         else
@@ -50,5 +55,21 @@ public class UIManager : MonoBehaviour
     public void OpenKeyboard()
     {
         Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+    }
+
+    private void AnswerCheck(string _playerInput)
+    {
+        foreach (var item in OldAnswers)
+        {
+            if (item == _playerInput)
+            {
+                _answerControl = true;
+                break;
+            }
+            else
+            {
+                _answerControl = false;
+            }
+        }
     }
 }

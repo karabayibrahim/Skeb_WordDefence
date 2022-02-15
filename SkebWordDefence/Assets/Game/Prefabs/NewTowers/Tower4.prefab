@@ -2840,6 +2840,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyType: 1
+  MyShooters:
+  - {fileID: 3385566202009339676}
+  - {fileID: 4608459842547136655}
 --- !u!65 &2759738648236402438
 BoxCollider:
   m_ObjectHideFlags: 0

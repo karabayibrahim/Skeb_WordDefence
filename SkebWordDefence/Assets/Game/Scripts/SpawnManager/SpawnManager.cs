@@ -25,7 +25,7 @@ public class SpawnManager : ScriptableObject
         newNpc.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    public void TowerSpawn(int _wordCount,float PosZ)
+    public void TowerSpawn(int _wordCount,float PosZ,string playerInput)
     {
         if (GameManager.Instance.FirstSpawn)
         {
@@ -35,36 +35,44 @@ public class SpawnManager : ScriptableObject
         {
             case 2:
                 var newTower = Instantiate(Towers[0], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower.gameObject);
                 break;
             case 3:
                 var newTower2 = Instantiate(Towers[1], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower2.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower2.gameObject);
                 break;
             case 4:
                 var newTower3 = Instantiate(Towers[2], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower3.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower3.gameObject);
                 break;
             case 5:
                 var newTower4 = Instantiate(Towers[3], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower4.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower4.gameObject);
                 break;
             case 6:
                 var newTower5 = Instantiate(Towers[4], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower5.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower5.gameObject);
                 break;
             case 7:
                 var newTower6 = Instantiate(Towers[5], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower6.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower6.gameObject);
                 break;
             case 8:
                 var newTower7 = Instantiate(Towers[6], new Vector3(0, 0, PosZ), Quaternion.identity);
+                newTower7.GetComponent<TowerG>().MyString = playerInput;
                 StartScaleEffeckt(newTower7.gameObject);
                 break;
             default:
                 if (_wordCount>8)
                 {
                     var newTower8 = Instantiate(Towers[6], new Vector3(0, 0, PosZ), Quaternion.identity);
+                    newTower8.GetComponent<TowerG>().MyString = playerInput;
                     StartScaleEffeckt(newTower8.gameObject);
                 }
                 else
@@ -171,10 +179,9 @@ public class SpawnManager : ScriptableObject
     {
         //Vector3 startScale = _obj.transform.localScale;
         //_obj.transform.localScale = new Vector3(0, 0, 0);
-        //_obj.transform.DOScale(startScale, 0.5f).SetEase(Ease.OutBack);
-        //.OnComplete(() =>
+        //_obj.transform.DOScale(startScale, 0.5f).SetEase(Ease.OutBack).OnComplete(() =>
         // {
-        //     _obj.GetComponent<Tower>().GuardPositionFixed();
+        //     _obj.GetComponent<TowerG>().ShooterPosSet();
         // });
     }
 }

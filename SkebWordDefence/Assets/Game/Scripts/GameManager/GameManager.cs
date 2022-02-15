@@ -8,6 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
     public SpawnManager SpawnManager;
     public ShotSystem ShotSystem;
     public AnswerData AnswerData;
+    public UIManager UIManager;
     public List<GameObject> NpcList = new List<GameObject>();
     public int SpawnCount;
     public int WordCount;
