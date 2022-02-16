@@ -11,6 +11,8 @@ public class TowerG : MonoBehaviour
     public string MyString;
     public List<NpcShotController> MyShooters = new List<NpcShotController>();
     public List<GameObject> TowerPiace = new List<GameObject>();
+    public GameObject DestroyObj;
+    public GameObject MainObject;
     public float Healt
     {
         get
@@ -33,7 +35,10 @@ public class TowerG : MonoBehaviour
     {
         if (Healt <= 0)
         {
-            Destroy(gameObject);
+            MainObject.SetActive(false);
+            DestroyObj.SetActive(true);
+            Destroy(gameObject, 2f);
+            //Destroy(gameObject);
             //transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
             //{
             //});
