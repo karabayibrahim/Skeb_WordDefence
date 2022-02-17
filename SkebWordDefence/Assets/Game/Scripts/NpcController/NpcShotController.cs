@@ -15,6 +15,7 @@ public class NpcShotController : MonoBehaviour
     public bool AttackStatus = false;
     private float fireRate = 0.1f;
     private float lastShot = 0;
+    private bool _targetControl = false;
 
     public NpcState NpcState
     {
@@ -89,19 +90,20 @@ public class NpcShotController : MonoBehaviour
     {
         if (gameObject!=null)
         {
+            _targetControl = true;
             NpcRemoveList();
             var index = Random.Range(0, Enemys.Count);
             var targetObj = Enemys[index];
             _targetObj = targetObj.transform;
             //gameObject.transform.DOLookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z), 0.1f);
-            transform.LookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z));
+            transform.DOLookAt(new Vector3(targetObj.transform.position.x, transform.position.y, targetObj.transform.position.z), 0.5f).OnComplete(()=>_targetControl=false);
             NpcState = NpcState.SHOT;
         }
     }
 
     public void ShotMethod()
     {
-        if (Time.time > fireRate + lastShot)
+        if (Time.time > fireRate + lastShot&&!_targetControl)
         {
             lastShot = Time.time;
             var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);

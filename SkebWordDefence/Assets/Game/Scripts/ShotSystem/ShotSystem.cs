@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShotSystem : MonoBehaviour
 {
     public List<NpcShotController> Shooters = new List<NpcShotController>();
+    public List<LaserControl> LaserShooters = new List<LaserControl>();
     void Start()
     {
         
@@ -30,5 +31,18 @@ public class ShotSystem : MonoBehaviour
             }
             
         }
+        foreach (var item in LaserShooters)
+        {
+            if (item != null)
+            {
+                item.Enemys.Remove(_npc);
+                if (item.Enemys.Count > 0)
+                {
+                    item.TargetMethod();
+                }
+            }
+
+        }
+
     }
 }

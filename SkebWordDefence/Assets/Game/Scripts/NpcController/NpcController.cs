@@ -175,13 +175,15 @@ public class NpcController : MonoBehaviour
             {
                 Speed = 8f;
                 //transform.DOLookAt(GameManager.Instance.Player.transform.position, 0.5f);
-                transform.LookAt(GameManager.Instance.Player.transform.position);
+                var player = GameManager.Instance.Player;
+                var looPos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z);
+                transform.LookAt(looPos);
             }
             //else
             //{
             //    Speed = 8f;
             //}
-            
+
         }
 
     }
