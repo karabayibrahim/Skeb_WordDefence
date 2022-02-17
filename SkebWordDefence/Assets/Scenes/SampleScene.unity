@@ -1133,7 +1133,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 1, y: -455}
-  m_SizeDelta: {x: 1200, y: 300}
+  m_SizeDelta: {x: 1300, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1380107074
 MonoBehaviour:
@@ -1607,8 +1607,8 @@ MonoBehaviour:
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 25, z: 25}
   m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_YDamping: 0
+  m_ZDamping: 0.5
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
