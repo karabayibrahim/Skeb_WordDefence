@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerEmotion
+  m_EditorClassIdentifier: 
+  Answers: Adoring Admiration Accepting Alert Annoyed Antsy Anxious Apologetic Appalled
+    Awed Astonished Aroused Bashful Bemused Betrayed Bored Brave Brooding Bothered
+    Calm Certain Cautious Challenged Carefree Captivated Clueless Cold Cranky Cynical
+    Delighted Delirious Derisive Desperate Determined Disturbed Dopey Doubtful Down
+    Drained Edgy Elated Embarrassed Empathetic Energetic Engrossed Enlightened Envious
+    Excited Excluded Exhausted Flabbergasted Foolish Frazzled Free Fretful Frustrated
+    Furious Giddy Glad Gleeful Gloomy Grief Guarded Guilty Hankering Hesitant Hollow
+    Horror Horrified Hostile Humiliated Hurt Hysterical Indifferent Indignant Intense
+    Interested Intoxicated Irritated Jittery Jocular Jolly Joyful Jumpy Keen Lazy
+    Lethargic Lonely Lost Longing Lucky Lustful Melancholic Miserable Mortified Mournful
+    Nasty Needy Nervous Numb Obsessed Offended Optimistic Overwhelmed Panicked Paranoid
+    Passionate Peaceful Perky Perplexed Petrified Pessimistic Pleasured Positive
+    Powerful Proud Raged Rattled Reassured Regretful Rueful Reflective Relaxed Relieved
+    Remorseful Revolted Satisfied Selfconscious Selfish Sensual Sensitive Shameful
+    Shock Sluggish Smug Snappy Somber Speechless Stressed Stunned Submissive Suffering
+    Sympathetic Surprised Terror Tense Thankful Thoughtful Tormented Troubled Upbeat
+    Uptight Wary Woeful Wretched Zealous Absorbed Beguiled Busy Charmed Cheeredup
+    Convulsed Delighted Diverted Engaged Entertained Glad Interested Involved Pleased
+    Preoccupied Regaled Wowed Beaming Blessed Blissful Carefree Cheerful Confident
+    Content Delighted Euphoric Exhilarated Glad Glowing Gratified Inclined Joy Pleased
+    Powerful Radiant Secure Self accepting Strong Thrilled Amicable Anxiety free
+    Blissful Calm Committed Composed Content Cordial Flexible Harmonious Isolated
+    Patient Pleasant Productive Quiet Relaxed Restful Secure Serene Soothed Stable
+    Tranquil Undisturbed Untroubled Unworried Acceptable Amused Content Contented
+    Delighted Elated Engaged Entertained Glad Good Grateful Gratified Lovely Nice
+    Overjoyed Pleasant Satisfied Selfapproving Superior Thankful Thrilled Well pleased
+    Athletic Buff Compelling Controlling Dominant Dynamic Hard Herculean High powered
+    Important Influential Intoxicating Irresistible Manly Mighty Persuasive Ripped
+    Shredded Solid Spirituous Stiff Strong Sturdy Thunderous Tough Vigorous Well
+    built Affectionate Amorous Beautiful Charming Dreamy Erotic Fond Generous Grateful
+    Humble Idealistic Illicit Intimate Kind Lovable Lovely Lovesick Loving Lustful
+    Passionate Romanticist Satisfied Tolerant Annoyed Bad tempered Conceited Crabby
+    Cross Disgusted Displeased Dissatisfied Enraged Exasperated Fuming Furious Hot
+    tempered Hot headed Intolerant Irritated Jealous Mad Outraged Provoked Raging
+    Resentful Stingy Waspish Wrathful Bummer Disinterested Dull Fatigued Inattentive
+    Flat Lifeless Monotonous Spiritless Stale Stodgy Stuffy Stupid Tamed Tedious
+    Tired Tiresome Tiring Annoyed Appalled Dismayed Displeased Dissatisfied Embarrassed
+    Grossed out Horrified Nasty Nauseated Offended Outraged Repelled Repulsed Revolted
+    Shocked Sickened Trashed Ugly Unwanted Used Violated Anxious Apprehensive Diffident
+    Doubtful Fearful Hesitant Inhibited Introverted Passive Self conscious Self doubting
+    Shy Timid Unassertive Uncertain Unconfident Unsure Worried Awful Blue Broken
+    hearted Depressed Doleful Down Downhearted Gloomy Glum Guilty Heartbroken Lonely
+    Low spirited Miserable Mournful Needy Pitiful Regretful Small Sorrowful Sorry
+    Unfortunate Unhappy Afraid Agitated Alarmed Confused Fearful Frantic Frightened
+    Horrified Hysterical Impatient Indecisive Intimidated Jittery Jumpy Nervous Panicky
+    Petrified Rigid Shaky Spooked Stressed Terrified Worried Happy Afraid Sad Hot
+    Amused Bored Anxious Confident Cold Suspicious Surprised Loving Curious Envious
+    Jealous Miserable Confused Stupid Angry Sick Ashamed Withdrawn Indifferent Sorry
+    Determined Crazy Bashful Depressed Enraged Frightened Interested Shy Hopeful
+    Regretful Scared Stubborn Thirsty Guilty Nervous Embarrassed Disgusted Proud
+    Ecstatic Lonely Frustrated Hurt Hungry Tired Smug Thoughtful Pained Optimistic
+    Relieved Puzzled Shocked Joyful Sleepy Excited Skeptical Bad Worried

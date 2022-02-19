@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataFruits
+  m_EditorClassIdentifier: 
+  Answers: Apple Watermelon Orange Pear Cherry Strawberry Nectarine Grape Mango Blueberry
+    Pomegranate Carambola starfruit Plum Banana Raspberry Mandarin Jackfruit Papaya
+    Kiwi Pineapple Lime Lemon Apricot Grapefruit Melon Coconut Avocado Peach Apples
+    Apricots Avocado Banana Boysenberries Blueberries Bing Cherry Cherries Cantaloupe
+    Crab apples Clementine Cucumbers Damson plum Dinosaur Eggs Dates Dewberries Dragon
+    Elderberry Eggfruit Evergreen Huckleberry Entawak Fig Farkleberry Finger Lime
+    Grapefruit Grapes Gooseberries Guava Honeydew melon Hackberry Honeycrisp Apples
+    Indian Prune Indonesian Lime Imbe Indian Fig Jackfruit Java Apple Jambolan Kiwi
+    Kaffir Lime Kumquat Lime Longan Lychee Loquat Mango Mandarin Orange Mulberry
+    Melon Nectarine Navel Orange Nashi Pear Olive Oranges Ogeechee Limes Oval Kumquat
+    Papaya Persimmon Paw Paw Prickly Pear Peach Pomegranate Pineapple Passion Fruit
+    Quince Queen Anne Cherry Quararibea cordata Rambutan Raspberries Rose Hips Star
+    Fruit Strawberries Sugar Baby Watermelon Tomato Tangerine Tamarind Tart Cherries
+    Ugli Fruit Uniq Fruit Ugni Vanilla Bean Velvet Pink Banana Voavanga Watermelon
+    Wolfberry White Mulberry Xigua Yangmei Zinfandel Grapes Zucchini

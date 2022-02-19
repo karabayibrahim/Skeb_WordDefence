@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tower
+  - Tas
+  - Cylinder
+  - FxTemporaire
+  - BLaser
+  - MLaser
   layers:
   - Default
   - TransparentFX
@@ -14,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Npc
+  - Des
   - 
   - 
   - 

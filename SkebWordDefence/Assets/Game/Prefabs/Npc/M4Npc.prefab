@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508425572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.169, y: 1.038, z: 0.956}
+  m_LocalPosition: {x: 0.169, y: 1.038, z: 0.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6416869767375244349}
@@ -1212,6 +1212,7 @@ MonoBehaviour:
   Enemys: []
   Bullet: {fileID: 22546206550519753, guid: c37481cb0d80e5742898e4ab4c60828a, type: 3}
   StartShootPoz: {fileID: 1508425573}
+  AttackStatus: 0
 --- !u!65 &5920496418656276118
 BoxCollider:
   m_ObjectHideFlags: 0

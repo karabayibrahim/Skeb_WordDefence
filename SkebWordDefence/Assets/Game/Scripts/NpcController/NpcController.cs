@@ -9,7 +9,7 @@ public class NpcController : MonoBehaviour
     private NpcState _npcState;
     private Animator _anim;
     private bool _attackControl = false;
-    private bool _deadStatus = false;
+    public bool _deadStatus = false;
 
     public TowerG AttackTower;
     public float Speed
@@ -25,6 +25,10 @@ public class NpcController : MonoBehaviour
                 return;
             }
             _speed = value;
+            if (Speed==0)
+            {
+                _deadStatus = true;
+            }
         }
     }
 
@@ -50,6 +54,8 @@ public class NpcController : MonoBehaviour
         switch (NpcState)
         {
             case NpcState.IDLE:
+                _deadStatus = true;
+                Speed = 0;
                 _anim.CrossFade("Idle", 0.05f);
                 break;
             case NpcState.RUN:
@@ -58,7 +64,7 @@ public class NpcController : MonoBehaviour
                 break;
             case NpcState.ATTACK:
                 _attackControl = true;
-                Speed = 6.5f;
+                Speed = 7f;
                 _anim.CrossFade("Attack", 0.05f);
                 _anim.SetLayerWeight(1, 1);
                 break;
@@ -153,6 +159,17 @@ public class NpcController : MonoBehaviour
             AttackTower = other.GetComponent<TowerG>();
             NpcState = NpcState.ATTACK;
         }
+        if (other.gameObject.tag == "Player")
+        {
+            GameManager.Instance.Player.Speed = 0f;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Tower")
+        {
+            _attackControl = false;
+        }
     }
 
     private void PlayerControl()
@@ -177,7 +194,7 @@ public class NpcController : MonoBehaviour
                 //transform.DOLookAt(GameManager.Instance.Player.transform.position, 0.5f);
                 var player = GameManager.Instance.Player;
                 var looPos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z);
-                transform.LookAt(looPos);
+                transform.DOLookAt(looPos, 0.5f);
             }
             //else
             //{

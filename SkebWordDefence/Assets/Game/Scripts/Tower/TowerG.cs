@@ -6,7 +6,7 @@ using TMPro;
 public class TowerG : MonoBehaviour
 {
     private float _healt = 100f;
-    private float _speed = 7f;
+    public float _speed = 7f;
     public TowerType MyType;
     public string MyString;
     public List<NpcShotController> MyShooters = new List<NpcShotController>();
@@ -35,9 +35,13 @@ public class TowerG : MonoBehaviour
     {
         if (Healt <= 0)
         {
+            foreach (var item in GetComponents<Collider>())
+            {
+                item.enabled = false;
+            }
             MainObject.SetActive(false);
             DestroyObj.SetActive(true);
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 4f);
             //Destroy(gameObject);
             //transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(() =>
             //{
@@ -48,10 +52,11 @@ public class TowerG : MonoBehaviour
     {
         Debug.Log(GameManager.Instance.UIManager.AnswerInput.text);
         TowerSpawnScale();
-        foreach (var item in TowerPiace)
-        {
-            item.GetComponentInChildren<TextMeshPro>().text = MyString[TowerPiace.IndexOf(item.gameObject)].ToString().ToUpper();
-        }
+        StartCoroutine(TowerStringTimer());
+        //foreach (var item in TowerPiace)
+        //{
+        //    item.GetComponentInChildren<TextMeshPro>().text = MyString[TowerPiace.IndexOf(item.gameObject)].ToString().ToUpper();
+        //}
     }
 
     // Update is called once per frame
@@ -77,19 +82,54 @@ public class TowerG : MonoBehaviour
         StartCoroutine(TowerSpawnTimer());
     }
 
+    private IEnumerator TowerStringTimer()
+    {
+        for (int i = 0; i < TowerPiace.Count; i++)
+        {
+            TowerPiace[i].GetComponentInChildren<TextMeshPro>().text = MyString[i].ToString().ToUpper();
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
     private IEnumerator TowerSpawnTimer()
     {
-        Vector3 startScale = new Vector3(0, 0, 0);
+        //Vector3 startScale = new Vector3(0, 0, 0);
         foreach (var item in TowerPiace)
         {
-            startScale = item.gameObject.transform.localScale;
+            //startScale = item.gameObject.transform.localScale;
             item.gameObject.transform.localScale = new Vector3(0, 0, 0);
         }
         foreach (var item in TowerPiace)
         {
-            item.gameObject.transform.DOScale(startScale, 0.1f);
-            yield return new WaitForSeconds(0.5f);
+            ShooterPosSet();
+            if (item.gameObject.tag == "Tas")
+            {
+                Vector3 tasScale = new Vector3(150.3092f, 56.82123f, 115.6828f);
+                item.gameObject.transform.DOScale(tasScale, 0.1f);
+            }
+            else if (item.gameObject.tag == "Cylinder")
+            {
+                Vector3 tasScale = new Vector3(13.65363f, 13.65363f, 20.19112f);
+                item.gameObject.transform.DOScale(tasScale, 0.1f);
+            }
+            else if (item.gameObject.tag == "BLaser")
+            {
+                Vector3 tasScale = new Vector3(1.5f, 1.5f, 1.5f);
+                item.gameObject.transform.DOScale(tasScale, 0.1f);
+            }
+            else if (item.gameObject.tag == "MLaser")
+            {
+                Vector3 tasScale = new Vector3(1.3f, 1.3f, 1.3f);
+                item.gameObject.transform.DOScale(tasScale, 0.1f);
+            }
+            else
+            {
+                Vector3 tasScale = new Vector3(1, 1, 1);
+                item.gameObject.transform.DOScale(tasScale, 0.1f);
+            }
+            yield return new WaitForSeconds(0.2f);
         }
+        
         yield break;
     }
 }

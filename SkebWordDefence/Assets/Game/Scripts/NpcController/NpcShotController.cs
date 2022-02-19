@@ -105,6 +105,8 @@ public class NpcShotController : MonoBehaviour
     {
         if (Time.time > fireRate + lastShot&&!_targetControl)
         {
+            var newParticle = Instantiate(GameManager.Instance.Particles[0], StartShootPoz.position, Quaternion.identity);
+            Destroy(newParticle, 0.1f);
             lastShot = Time.time;
             var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);
             newBullet.transform.LookAt(_targetObj.transform.position);

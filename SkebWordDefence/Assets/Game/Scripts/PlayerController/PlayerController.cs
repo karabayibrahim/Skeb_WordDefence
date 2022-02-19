@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             _speed = value;
+            if (Speed==0)
+            {
+                _anim.CrossFade("Dead", 0.1f);
+                GameManager.Instance.GameState = GameState.FAIL;
+            }
         }
     }
 

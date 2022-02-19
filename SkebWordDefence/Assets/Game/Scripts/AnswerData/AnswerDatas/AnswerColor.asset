@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerColor
+  m_EditorClassIdentifier: 
+  Answers: Amaranth Amber Amethyst Apricot Aquamarine Azure Baby blue Beige Brick
+    red Black Blue Blue-green Blue-violet Blush Bronze Brown Burgundy Byzantium Carmine
+    Cerise Cerulean Champagne Chartreuse green Chocolate Cobalt blue Coffee Copper
+    Coral Crimson Cyan Aqua Desert sand Electric blue Emerald Erin Gold Gray Green
+    Harlequin Indigo Ivory Jade Jungle green Lavender Lemon Lilac Lime Magenta Fuchsia
+    Magenta rose Maroon Mauve Navy blue Ochre Olive Orange Orange-red Orchid Peach
+    Pear Periwinkle Persian blue Pink Plum Prussian blue Puce Purple Raspberry Red
+    Red-violet Rose Ruby Salmon Sangria Sapphire Scarlet Silver Slate gray Spring
+    bud Spring green Tan Taupe Teal Turquoise Ultramarine Violet Viridian White Yellow

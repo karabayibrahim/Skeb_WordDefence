@@ -17,11 +17,12 @@ public class LaserControl : MonoBehaviour
     [SerializeField] private Transform StartShootPoz2;
     private Tween BulletTween;
     private Tween BulletTween2;
-
+    private bool _spawnControl = false;
     void Start()
     {
         GameManager.Instance.ShotSystem.LaserShooters.Add(this);
         _anim = GetComponentInChildren<Animator>();
+        StartCoroutine(SpawnTimer());
     }
 
     // Update is called once per frame
@@ -31,7 +32,10 @@ public class LaserControl : MonoBehaviour
         {
             _anim.CrossFade("Idle",0.01f);
         }
-        ShotMethod();
+        if (_spawnControl)
+        {
+            ShotMethod();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,6 +75,10 @@ public class LaserControl : MonoBehaviour
     {
         if (Time.time > fireRate + lastShot && !_targetControl)
         {
+            var newParticle = Instantiate(GameManager.Instance.Particles[1], StartShootPoz.position, Quaternion.identity);
+            var newParticle2 = Instantiate(GameManager.Instance.Particles[1], StartShootPoz2.position, Quaternion.identity);
+            Destroy(newParticle, 0.1f);
+            Destroy(newParticle2, 0.1f);
             _anim.CrossFade("Shot", 0.01f);
             Debug.Log("LaserShot");
             lastShot = Time.time;
@@ -91,5 +99,11 @@ public class LaserControl : MonoBehaviour
             if (Enemys[i] == null)
                 Enemys.RemoveAt(i);
         }
+    }
+
+    private IEnumerator SpawnTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        _spawnControl = true;
     }
 }

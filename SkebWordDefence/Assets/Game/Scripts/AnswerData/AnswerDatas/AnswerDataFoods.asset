@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
+  m_Name: AnswerDataFoods
+  m_EditorClassIdentifier: 
+  Answers: Anchovies Asparagus Avocados Alfredo Sauce Arugula Almonds Amaranth Apples
+    Bacon Bagels Bananas Barbecue Barley Basil Beans Beef Beets Blackberries Blueberries
+    Bread Broccoli Burgers Cabbage Cake Calzones Cheese Chicken Chili Coconut Cod
+    Coffee Collards Cookies Crepes Curry Daikon Dairy Dal Danishes Dates Dill Dosa
+    Doubles Doughnuts Duck Duff Dumplings Durian Eclairs Edamame Eel Eggnog Eggplant
+    Eggrolls Eggs Emmenthaler Empanadas Enchiladas Escargot Escarole Espresso Falafel
+    Fennel Figs Fish Frankfurters French Fries Frittatas Fritters Frogs Fruit Fruitcakes
+    Fungi Gazpacho Goose Gooseberries Graham Crackers Granola Grapes Gravy Guacamole
+    Guava Gumbo Gyoza Gyros Ham Hamburger Hash Browns Herring Hoisin Sauce Honey
+    Honeydew Horseradish Hot Dogs Hot Sauce Huckleberries Hummus Icaco Ice Ice Cream
+    Iceberg Lettuce Idli Ikizukuri Inarizushi Injera Isaw Ital Italian Sausage Jackfruit
+    Jalapeno Jam Jambalaya Jambon Jelly Jerk Chicken Jiaozi Johnnycake Jollof Jordan
+    Almonds Kaiser Roll Kale Kasha Kelp Kimchi Knockwurst Kohlrabi Kombucha Kuchen
+    Kugel Kumquats Lard Lasagna Lemon Lima Beans Limes Lingonberries Linzer Torte
+    Liver Lo Mein Lollipop Lutefisk Macaroon Mango Mangosteen Maple Syrup Margarine
+    Mayonnaise Melon Millet Mochi Mulberries Mustard Naan Nachos Natto Navy Beans
+    Nectarines Neufchatel Cheese Noodles Nori Nougat Nuts Oatmeal Octopus Oil Okra
+    Olives Onion Opossum Oranges Oregano Oysters Pad Thai Pears Peas Pecans Pepperoni
+    Peppers Pie Poi Pork Pumpkins Qeema Quahog Quail Quenelle Quesadillas Queso Quetsch
+    Quiche Quinces Quinoa Radishes Raisins Ramen Raspberries Ravioli Relish Rhubarb
+    Rice Rigatoni Romaine Roquefort Rye Bread Salami Sesame Seeds Sorbet Sorghum
+    Soybeans Spaghetti Spanakopita Spinach Squash Sugar Sukiyaki Tacos Tagliatelle
+    Tempeh Tempura Tiramisu Tofu Tomatoes Tortellini Truffles Tuna Turnips Ube Udon
+    Ugba Ukoy Umbrella Fruit Unagi Upma Uszka Utazi Utthappam Vanilla Vatapa Vatrushka
+    Veal Vegetables Venison Vermicelli Vindaloo Vinegar Vori Vori Wafers Waffles
+    Walnuts Wasabi Waterblommetjie Bredie Watermelon Wheat Whelk Whiting Wine Wontons
+    Xacuti Xanthia Xavier Steak Xia Mi Xiao Long Bao Xigua Ximenia Xnipec Xocoatl
+    Xouba Yabby Yahni Yakitori Yams Yautia Yeast Yogurt Yorkshire Pudding Yucca Yuzu
+    Zander Zapiekanka Zarzuela Zeppole Zerde Ziti Zongzi Zoni Zucchini Zuccotto Fried
+    Chicken Omelet Pizza Kebab Fish Steak Broth Tossed Salad Dressing Pasta Rice
+    Soup Marmalade Ham Egg Bread Breakfast Burrito Hot Chocolate Bacon Donut Porridge
+    Muffin Waffle Tomato Croissant Pancake Toast Breakfast Sandwich Yogurt Cheese
+    Milk Sausage Orange Juice Breakfast Cereal Coffee Hamburger Cheeseburger Sandwich
+    Milk Shake Muffin Burrito Biscuit Cookie Taco Hot Dog Fried Chicken Donuts Baguette
+    Soft Drink Pizza Onion Ring Sausage Pretzel Pancake Bacon Chip Fry Noodle White
+    Bread Wheat Bread Whole Grain Bread Rye Bread Hot Dog Bun Hamburger Bun Croissant
+    Swiss Roll Jelly Roll Pretzel Bagel Donut Roll Breadstick French Bread Baguette
+    Pork Beef Mutton And Lamb Goat Venison Chicken Turkey Duck Fish Example Tuna
+    Crabs Lobsters Burger Sandwich Hot Dog Cherry Apple Grape Orange Olive Watermelon
+    Carrot Tomato Pea Salad Vegetable Pancake Sausage Egg Potato Cookie Fries Candy
+    Bread Fruit Juice Meat Rice Cereal Milk Coffee Tea Flour Salt Soup Sugar Butter
+    Cheese Honey Water Chocolate Jam Seafood Smustard

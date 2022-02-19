@@ -13,14 +13,16 @@ public class SpawnManager : ScriptableObject
     //public GameObject LaserTower;
     //public GameObject TowerG;
     public List<TowerG> Towers = new List<TowerG>();
-    private bool _firstSpawn = false;
+    //private bool _firstSpawn = false;
 
 
     public void SpawnObjectMethod()
     {
-        float PozX = Random.Range(-6, 6);
-        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 50, GameManager.Instance.Player.transform.position.z + 55f);
+        float PozX = Random.Range(-12, 12);
+        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 100, GameManager.Instance.Player.transform.position.z + 55f);
         var newNpc = Instantiate(SpawnObject, new Vector3(PozX, 0, PozZ), Quaternion.identity);
+        newNpc.transform.localScale = new Vector3(0, 0, 0);
+        newNpc.transform.DOScale(2f, 1f);
         GameManager.Instance.NpcList.Add(newNpc);
         newNpc.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
@@ -29,7 +31,7 @@ public class SpawnManager : ScriptableObject
     {
         if (GameManager.Instance.FirstSpawn)
         {
-            GameManager.Instance.Player.transform.position = new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 5f);
+            GameManager.Instance.Player.transform.DOMove(new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 10f), 0.5f);
         }
         switch (_wordCount)
         {
@@ -61,6 +63,8 @@ public class SpawnManager : ScriptableObject
             case 7:
                 var newTower6 = Instantiate(Towers[5], new Vector3(0, 0, PosZ), Quaternion.identity);
                 newTower6.GetComponent<TowerG>().MyString = playerInput;
+                newTower6.GetComponent<TowerG>()._speed = -7f;
+                newTower6.transform.rotation = Quaternion.Euler(0, 180, 0);
                 StartScaleEffeckt(newTower6.gameObject);
                 break;
             case 8:
@@ -77,7 +81,7 @@ public class SpawnManager : ScriptableObject
                 }
                 else
                 {
-                    GameManager.Instance.Player.transform.position = new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z + 5f);
+                    GameManager.Instance.Player.transform.position = new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z + 10f);
                     Debug.Log("No");
                 }
                 break;
