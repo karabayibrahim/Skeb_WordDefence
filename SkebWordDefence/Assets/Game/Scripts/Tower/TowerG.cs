@@ -6,7 +6,7 @@ using TMPro;
 public class TowerG : MonoBehaviour
 {
     private float _healt = 100f;
-    public float _speed = 7f;
+    public float _speed = 10f;
     public TowerType MyType;
     public string MyString;
     public List<NpcShotController> MyShooters = new List<NpcShotController>();
@@ -50,6 +50,8 @@ public class TowerG : MonoBehaviour
     }
     void Start()
     {
+        _speed = 12f;
+        Finish.FinishAction += FinishStatus;
         Debug.Log(GameManager.Instance.UIManager.AnswerInput.text);
         TowerSpawnScale();
         StartCoroutine(TowerStringTimer());
@@ -57,6 +59,11 @@ public class TowerG : MonoBehaviour
         //{
         //    item.GetComponentInChildren<TextMeshPro>().text = MyString[TowerPiace.IndexOf(item.gameObject)].ToString().ToUpper();
         //}
+    }
+
+    private void OnDisable()
+    {
+        Finish.FinishAction -= FinishStatus;
     }
 
     // Update is called once per frame
@@ -131,5 +138,10 @@ public class TowerG : MonoBehaviour
         }
         
         yield break;
+    }
+
+    private void FinishStatus()
+    {
+        _speed = 0f;
     }
 }

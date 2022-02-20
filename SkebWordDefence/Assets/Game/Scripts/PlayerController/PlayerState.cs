@@ -6,4 +6,6 @@ public enum PlayerState
 {
     IDLE,
     RUN,
+    WIN,
+    DEAD,
 }

@@ -20,9 +20,15 @@ public class LaserControl : MonoBehaviour
     private bool _spawnControl = false;
     void Start()
     {
+        Finish.FinishAction += FinishStatus;
         GameManager.Instance.ShotSystem.LaserShooters.Add(this);
         _anim = GetComponentInChildren<Animator>();
         StartCoroutine(SpawnTimer());
+    }
+
+    private void OnDisable()
+    {
+        Finish.FinishAction -= FinishStatus;
     }
 
     // Update is called once per frame
@@ -75,19 +81,23 @@ public class LaserControl : MonoBehaviour
     {
         if (Time.time > fireRate + lastShot && !_targetControl)
         {
-            var newParticle = Instantiate(GameManager.Instance.Particles[1], StartShootPoz.position, Quaternion.identity);
-            var newParticle2 = Instantiate(GameManager.Instance.Particles[1], StartShootPoz2.position, Quaternion.identity);
-            Destroy(newParticle, 0.1f);
-            Destroy(newParticle2, 0.1f);
-            _anim.CrossFade("Shot", 0.01f);
-            Debug.Log("LaserShot");
-            lastShot = Time.time;
-            var newBullet = Instantiate(LaserBullet, StartShootPoz.position, Quaternion.identity);
-            var newBullet2 = Instantiate(LaserBullet, StartShootPoz2.position, Quaternion.identity);
-            newBullet.transform.LookAt(_targetObj.transform.position);
-            newBullet2.transform.LookAt(_targetObj.transform.position);
-            BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
-            BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.5f);
+            if (gameObject!=null)
+            {
+                var newParticle = Instantiate(GameManager.Instance.Particles[1], StartShootPoz.position, Quaternion.identity);
+                var newParticle2 = Instantiate(GameManager.Instance.Particles[1], StartShootPoz2.position, Quaternion.identity);
+                Destroy(newParticle, 0.1f);
+                Destroy(newParticle2, 0.1f);
+                _anim.CrossFade("Shot", 0.01f);
+                //Debug.Log("LaserShot");
+                lastShot = Time.time;
+                var newBullet = Instantiate(LaserBullet, StartShootPoz.position, Quaternion.identity);
+                var newBullet2 = Instantiate(LaserBullet, StartShootPoz2.position, Quaternion.identity);
+                newBullet.transform.LookAt(_targetObj.transform.position);
+                newBullet2.transform.LookAt(_targetObj.transform.position);
+                BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+                BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.5f);
+            }
+            
         }
 
     }
@@ -105,5 +115,12 @@ public class LaserControl : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         _spawnControl = true;
+    }
+
+    private void FinishStatus()
+    {
+        _targetControl = true;
+        _anim.CrossFade("Idle", 0.01f);
+        this.enabled = false;
     }
 }

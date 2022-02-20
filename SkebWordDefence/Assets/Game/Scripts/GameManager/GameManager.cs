@@ -58,8 +58,16 @@ public class GameManager : MonoSingleton<GameManager>
                 {
                     item.GetComponent<NpcController>().NpcState = NpcState.IDLE;
                 }
+                UIManager.FailStatus();
                 break;
             case GameState.WIN:
+                foreach (var item in NpcList)
+                {
+                    var newParticle = Instantiate(Particles[2], item.transform.position, Quaternion.identity);
+                    Destroy(newParticle, 1f);
+                    Destroy(item.gameObject);
+                }
+                UIManager.WinStatus();
                 break;
             default:
                 break;

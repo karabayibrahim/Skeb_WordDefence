@@ -22,7 +22,7 @@ public class SpawnManager : ScriptableObject
         float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 100, GameManager.Instance.Player.transform.position.z + 55f);
         var newNpc = Instantiate(SpawnObject, new Vector3(PozX, 0, PozZ), Quaternion.identity);
         newNpc.transform.localScale = new Vector3(0, 0, 0);
-        newNpc.transform.DOScale(2f, 1f);
+        newNpc.transform.DOScale(3f, 1f);
         GameManager.Instance.NpcList.Add(newNpc);
         newNpc.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
@@ -31,7 +31,7 @@ public class SpawnManager : ScriptableObject
     {
         if (GameManager.Instance.FirstSpawn)
         {
-            GameManager.Instance.Player.transform.DOMove(new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 10f), 0.5f);
+            GameManager.Instance.Player.transform.DOMove(new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 15f), 0.5f);
         }
         switch (_wordCount)
         {
@@ -63,7 +63,7 @@ public class SpawnManager : ScriptableObject
             case 7:
                 var newTower6 = Instantiate(Towers[5], new Vector3(0, 0, PosZ), Quaternion.identity);
                 newTower6.GetComponent<TowerG>().MyString = playerInput;
-                newTower6.GetComponent<TowerG>()._speed = -7f;
+                newTower6.GetComponent<TowerG>()._speed = -10f;
                 newTower6.transform.rotation = Quaternion.Euler(0, 180, 0);
                 StartScaleEffeckt(newTower6.gameObject);
                 break;

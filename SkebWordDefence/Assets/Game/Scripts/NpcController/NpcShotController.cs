@@ -72,9 +72,14 @@ public class NpcShotController : MonoBehaviour
     }
     void Start()
     {
+        Finish.FinishAction += FinishStatus;
         _anim = GetComponent<Animator>();
         GameManager.Instance.ShotSystem.Shooters.Add(this);
         transform.localPosition = new Vector3(transform.localPosition.x, 2.2f, transform.localPosition.z);
+    }
+    private void OnDisable()
+    {
+        Finish.FinishAction -= FinishStatus;
     }
 
     // Update is called once per frame
@@ -122,5 +127,12 @@ public class NpcShotController : MonoBehaviour
             if (Enemys[i] == null)
                 Enemys.RemoveAt(i);
         }
+    }
+
+    private void FinishStatus()
+    {
+        _targetControl = true;
+        NpcState = NpcState.IDLE;
+        this.enabled = false;
     }
 }

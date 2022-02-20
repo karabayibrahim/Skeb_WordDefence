@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public TMP_InputField AnswerInput;
@@ -15,9 +16,30 @@ public class UIManager : MonoBehaviour
     public GameObject AnswerPanel;
     [Header("QuestionPanel")]
     public TMP_Text QuestText;
+    [Header("GamePanel")]
+    public GameObject GamePanel;
+    public TMP_Text LevelText;
+    public Button RetryButton;
+    [Header("FailPanel")]
+    public GameObject FailPanel;
+    public Button RestartButton;
+    [Header("WinPanel")]
+    public GameObject WinPanel;
+    public Button NextButton;
     void Start()
     {
         AdjustQuestionText();
+        LevelText.text = "LEVEL" + " "+SceneManager.GetActiveScene().buildIndex.ToString();
+        RestartButton.onClick.AddListener(RestartStatus);
+        RetryButton.onClick.AddListener(RestartStatus);
+        Finish.FinishAction += WinStatus;
+    }
+
+    private void OnDisable()
+    {
+        RestartButton.onClick.RemoveListener(RestartStatus);
+        RetryButton.onClick.RemoveListener(RestartStatus);
+        Finish.FinishAction -= WinStatus;
     }
 
     // Update is called once per frame
@@ -38,7 +60,7 @@ public class UIManager : MonoBehaviour
         string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[GameManager.Instance.LevelIndex].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
-        if (answerdatastring.Contains(""+playerInput+"")&&answerdatastring.Length>0&&!_answerControl)
+        if (answerdatastring.Contains(" "+playerInput+" ")&&playerInput.Length>1&&!_answerControl)
         {
             Debug.Log("Var");
             OldAnswers.Add(playerInput);
@@ -48,7 +70,7 @@ public class UIManager : MonoBehaviour
                 textCount = 9;
             }
             GameManager.Instance.FirstSpawn = true;
-            GameManager.Instance.Player.AnswerStatus(textCount);
+            //GameManager.Instance.Player.AnswerStatus(textCount);
             GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f,playerInput);
             TrueAnswer();
             AnswerInput.text = "";
@@ -62,15 +84,15 @@ public class UIManager : MonoBehaviour
 
     public void WrongAnswer()
     {
-        AnswerPanel.transform.DOScale(1.5f, 0.15f).SetLoops(2, LoopType.Yoyo);
-        AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.15f).SetLoops(2, LoopType.Yoyo);
+        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo);
+        AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
         AnswerInput.text = "";
     }
 
     public void TrueAnswer()
     {
-        AnswerPanel.transform.DOScale(1.5f, 0.15f).SetLoops(2, LoopType.Yoyo);
-        AnswerPanel.GetComponent<Image>().DOColor(new Color(20f / 255f, 255f / 255f, 0f / 255f), 0.15f).SetLoops(2, LoopType.Yoyo);
+        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo);
+        AnswerPanel.GetComponent<Image>().DOColor(new Color(20f / 255f, 255f / 255f, 0f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
     }
 
     public void OpenKeyboard()
@@ -94,8 +116,36 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void RestartStatus()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void AdjustQuestionText() 
     {
         QuestText.text = GameManager.Instance.QuestionData.Questions[GameManager.Instance.LevelIndex];
+    }
+
+    public void FailStatus()
+    {
+        StartCoroutine(FailTimer());
+    }
+    public void WinStatus()
+    {
+        StartCoroutine(WinTimer());
+    }
+
+    private IEnumerator FailTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        GamePanel.SetActive(false);
+        FailPanel.SetActive(true);
+    }
+    private IEnumerator WinTimer()
+    {
+        GameManager.Instance.GameState = GameState.WIN;
+        yield return new WaitForSeconds(3f);
+        GamePanel.SetActive(false);
+        WinPanel.SetActive(true);
     }
 }
