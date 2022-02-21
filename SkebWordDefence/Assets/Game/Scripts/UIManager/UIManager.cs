@@ -29,6 +29,11 @@ public class UIManager : MonoBehaviour
     [Header("WinPanel")]
     public GameObject WinPanel;
     public Button NextButton;
+
+    private Tween TrueTween;
+    private Tween WrongTween;
+    private Tween TrueColor;
+    private Tween WrongColor;
     void Start()
     {
         AdjustQuestionText();
@@ -87,28 +92,32 @@ public class UIManager : MonoBehaviour
 
     public void WrongAnswer()
     {
+        TrueTween.Kill();
+        TrueColor.Kill();
         Wrong.SetActive(true);
         AnswerText.SetActive(false);
-        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+        WrongTween=AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
         {
             Wrong.SetActive(false);
             AnswerText.SetActive(true);
         });
 
-        AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
+        WrongColor=AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
         AnswerInput.text = "";
     }
 
     public void TrueAnswer()
     {
+        WrongTween.Kill();
+        WrongColor.Kill();
         TrueA.SetActive(true);
         AnswerText.SetActive(false);
-        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+        TrueTween=AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
         {
             TrueA.SetActive(false);
             AnswerText.SetActive(true);
         });
-        AnswerPanel.GetComponent<Image>().DOColor(new Color(58f / 255f, 255f / 255f, 19f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
+        TrueColor=AnswerPanel.GetComponent<Image>().DOColor(new Color(58f / 255f, 255f / 255f, 19f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
     }
 
     public void OpenKeyboard()
