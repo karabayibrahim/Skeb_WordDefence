@@ -56,10 +56,10 @@ public class UIManager : MonoBehaviour
         if (TouchScreenKeyboard.visible == false && Keyboard != null)
         {
             TextCountText.text = AnswerInput.text.Length.ToString();
-            if (Keyboard.status == TouchScreenKeyboard.Status.Done)
-            {
-                AnswerControl();
-            }
+            //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
+            //{
+            //    AnswerControl();
+            //}
         }
     }
 
@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
         AnswerCheck(playerInput);
         if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
         {
-            Debug.Log("Var");
+            //Debug.Log("Var");
             OldAnswers.Add(playerInput);
             var textCount = playerInput.Length;
             if (textCount > 9)
@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
         else
         {
             WrongAnswer();
-            Debug.Log("Yok");
+            //Debug.Log("Yok");
         }
     }
 
