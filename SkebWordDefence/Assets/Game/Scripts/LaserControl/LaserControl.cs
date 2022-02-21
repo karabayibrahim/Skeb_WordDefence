@@ -94,8 +94,8 @@ public class LaserControl : MonoBehaviour
                 var newBullet2 = Instantiate(LaserBullet, StartShootPoz2.position, Quaternion.identity);
                 newBullet.transform.LookAt(_targetObj.transform.position);
                 newBullet2.transform.LookAt(_targetObj.transform.position);
-                BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
-                BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.5f);
+                BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.4f);
+                BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.4f);
             }
             
         }

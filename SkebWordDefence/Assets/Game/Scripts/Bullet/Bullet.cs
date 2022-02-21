@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
             //Destroy();
             //other.gameObject.SetActive(false);
             other.gameObject.GetComponent<Collider>().enabled = false;
-            other.gameObject.GetComponentInChildren<Renderer>().material.color = new Color(61f / 255f, 61f / 255f, 61f / 255f);
+            other.gameObject.GetComponentInChildren<Renderer>().material.color = new Color(87f / 255f, 87f / 255f, 87f / 255f);
             other.gameObject.GetComponent<NpcController>().NpcState = NpcState.DEAD;
             GameManager.Instance.ShotSystem.RemoveNpc(other.gameObject.GetComponent<NpcController>());
             GameManager.Instance.NpcList.Remove(other.gameObject);

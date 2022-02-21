@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
     public GameObject GamePanel;
     public TMP_Text LevelText;
     public Button RetryButton;
+    public GameObject Wrong;
+    public GameObject TrueA;
+    public GameObject AnswerText;
     [Header("FailPanel")]
     public GameObject FailPanel;
     public Button RestartButton;
@@ -29,7 +32,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         AdjustQuestionText();
-        LevelText.text = "LEVEL" + " "+SceneManager.GetActiveScene().buildIndex.ToString();
+        LevelText.text = "LEVEL" + " " + SceneManager.GetActiveScene().buildIndex.ToString();
         RestartButton.onClick.AddListener(RestartStatus);
         RetryButton.onClick.AddListener(RestartStatus);
         Finish.FinishAction += WinStatus;
@@ -45,10 +48,10 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TouchScreenKeyboard.visible==false&&Keyboard!=null)
+        if (TouchScreenKeyboard.visible == false && Keyboard != null)
         {
             TextCountText.text = AnswerInput.text.Length.ToString();
-            if (Keyboard.status==TouchScreenKeyboard.Status.Done)
+            if (Keyboard.status == TouchScreenKeyboard.Status.Done)
             {
                 AnswerControl();
             }
@@ -60,18 +63,18 @@ public class UIManager : MonoBehaviour
         string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[GameManager.Instance.LevelIndex].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
-        if (answerdatastring.Contains(" "+playerInput+" ")&&playerInput.Length>1&&!_answerControl)
+        if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
         {
             Debug.Log("Var");
             OldAnswers.Add(playerInput);
             var textCount = playerInput.Length;
-            if (textCount>9)
+            if (textCount > 9)
             {
                 textCount = 9;
             }
             GameManager.Instance.FirstSpawn = true;
             //GameManager.Instance.Player.AnswerStatus(textCount);
-            GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f,playerInput);
+            GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f, playerInput);
             TrueAnswer();
             AnswerInput.text = "";
         }
@@ -84,15 +87,28 @@ public class UIManager : MonoBehaviour
 
     public void WrongAnswer()
     {
-        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo);
+        Wrong.SetActive(true);
+        AnswerText.SetActive(false);
+        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+        {
+            Wrong.SetActive(false);
+            AnswerText.SetActive(true);
+        });
+
         AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
         AnswerInput.text = "";
     }
 
     public void TrueAnswer()
     {
-        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo);
-        AnswerPanel.GetComponent<Image>().DOColor(new Color(20f / 255f, 255f / 255f, 0f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
+        TrueA.SetActive(true);
+        AnswerText.SetActive(false);
+        AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+        {
+            TrueA.SetActive(false);
+            AnswerText.SetActive(true);
+        });
+        AnswerPanel.GetComponent<Image>().DOColor(new Color(58f / 255f, 255f / 255f, 19f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
     }
 
     public void OpenKeyboard()
@@ -121,7 +137,7 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void AdjustQuestionText() 
+    private void AdjustQuestionText()
     {
         QuestText.text = GameManager.Instance.QuestionData.Questions[GameManager.Instance.LevelIndex];
     }

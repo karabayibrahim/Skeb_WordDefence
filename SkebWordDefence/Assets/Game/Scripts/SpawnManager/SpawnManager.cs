@@ -19,10 +19,10 @@ public class SpawnManager : ScriptableObject
     public void SpawnObjectMethod()
     {
         float PozX = Random.Range(-12, 12);
-        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 100, GameManager.Instance.Player.transform.position.z + 55f);
+        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 150, GameManager.Instance.Player.transform.position.z +200f);
         var newNpc = Instantiate(SpawnObject, new Vector3(PozX, 0, PozZ), Quaternion.identity);
         newNpc.transform.localScale = new Vector3(0, 0, 0);
-        newNpc.transform.DOScale(3f, 1f);
+        newNpc.transform.DOScale(4.25f, 1f);
         GameManager.Instance.NpcList.Add(newNpc);
         newNpc.transform.rotation = Quaternion.Euler(0, 180, 0);
     }
@@ -31,7 +31,7 @@ public class SpawnManager : ScriptableObject
     {
         if (GameManager.Instance.FirstSpawn)
         {
-            GameManager.Instance.Player.transform.DOMove(new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 15f), 0.5f);
+            GameManager.Instance.Player.transform.DOMove(new Vector3(GameManager.Instance.Player.transform.position.x, GameManager.Instance.Player.transform.position.y, GameManager.Instance.Player.transform.position.z - 20f), 0.5f);
         }
         switch (_wordCount)
         {

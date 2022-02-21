@@ -27,7 +27,7 @@ public class NpcController : MonoBehaviour
                 return;
             }
             _speed = value;
-            if (Speed==0)
+            if (Speed == 0)
             {
                 _deadStatus = true;
             }
@@ -63,7 +63,7 @@ public class NpcController : MonoBehaviour
                 _anim.SetLayerWeight(1, 0);
                 break;
             case NpcState.RUN:
-                 Speed = 14;
+                Speed = 14;
                 _anim.CrossFade("Run", 0.05f);
                 _anim.SetLayerWeight(1, 0);
                 break;
@@ -89,7 +89,7 @@ public class NpcController : MonoBehaviour
         _anim = GetComponent<Animator>();
         _anim.SetFloat("Offset", UnityEngine.Random.Range(0, 1f));
         NpcState = NpcState.RUN;
-        InvokeRepeating("ZigZag", 2f,3f);
+        InvokeRepeating("ZigZag", 2f, 3f);
     }
 
     // Update is called once per frame
@@ -97,14 +97,17 @@ public class NpcController : MonoBehaviour
     {
         MoveSystem();
         PlayerControl();
-        if (AttackTower==null&&!_deadStatus)
+        if (AttackTower == null && !_deadStatus)
         {
             NpcState = NpcState.RUN;
             _anim.SetLayerWeight(1, 0);
         }
-        LineMove();
-        
+
         //Debug.Log(Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position));
+    }
+    private void FixedUpdate()
+    {
+        LineMove();
     }
 
     private void MoveSystem()
@@ -127,7 +130,7 @@ public class NpcController : MonoBehaviour
                 }
                 break;
             case TowerType.STONE:
-                if (AttackTower!=null)
+                if (AttackTower != null)
                 {
                     AttackTower.Healt -= 10f;
                 }
@@ -183,26 +186,30 @@ public class NpcController : MonoBehaviour
 
     private void PlayerControl()
     {
-        if (!_attackControl&&!_deadStatus)
+        if (!_attackControl && !_deadStatus)
         {
             if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 5f)
             {
-                Speed = 13f;
+                var rnd = UnityEngine.Random.Range(12f, 16f);
+                Speed = rnd;
             }
-            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 20f&& Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 30f)
+            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 20f && Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 50f)
             {
-                Speed = 16f;
+                var rnd = UnityEngine.Random.Range(10f, 25f);
+                Speed = rnd;
             }
-            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 30f)
+            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 50f)
             {
-                Speed = 16f;
+                var rnd = UnityEngine.Random.Range(18f, 25f);
+                Speed = rnd;
             }
-            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 15f)
+            else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 20f)
             {
-                Speed = 15f;
+                var rnd = UnityEngine.Random.Range(12f, 16f);
+                Speed = rnd;
                 //transform.DOLookAt(GameManager.Instance.Player.transform.position, 0.5f);
                 var player = GameManager.Instance.Player;
-                var looPos = new Vector3(player.transform.position.x,transform.position.y, player.transform.position.z);
+                var looPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
                 //Vector3 dir = player.transform.position - transform.position;
                 //transform.position += new Vector3(Time.deltaTime * dir.x, transform.position.y, Time.deltaTime * dir.z);
                 transform.DOLookAt(looPos, 0.5f);
@@ -230,18 +237,20 @@ public class NpcController : MonoBehaviour
         {
             lineControl = false;
         }
+
     }
-    
+
     private void ZigZag()
     {
         if (!lineControl)
         {
-            rnd = UnityEngine.Random.Range(-2, 2);
+            rnd = UnityEngine.Random.Range(-2, 3);
             var lookPos = new Vector3(transform.position.x + rnd, transform.position.y, transform.position.z - 10f);
-            transform.LookAt(lookPos);
+            //transform.LookAt(lookPos);
+            transform.DOLookAt(lookPos, 0.5f);
         }
-        
-        
+
+
 
     }
 }
