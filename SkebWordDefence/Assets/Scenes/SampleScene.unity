@@ -2239,7 +2239,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213496309}
+        m_MethodName: StringLeght
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3354,7 +3365,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640611020}
-  m_LocalRotation: {x: 0.33513314, y: 0.00000003888169, z: -0.000000011797475, w: 0.9421708}
+  m_LocalRotation: {x: 0.33513317, y: -8.278418e-10, z: 0.0000000023273314, w: 0.9421708}
   m_LocalPosition: {x: 0, y: 77.5, z: -10.700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4895,7 +4906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.33513314, y: 0.00000003888169, z: -0.000000011797475, w: 0.9421708}
+  m_LocalRotation: {x: 0.33513317, y: -8.278418e-10, z: 0.0000000023273314, w: 0.9421708}
   m_LocalPosition: {x: 0, y: 77.5, z: -10.700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

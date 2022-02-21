@@ -53,14 +53,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TouchScreenKeyboard.visible == false && Keyboard != null)
-        {
-            TextCountText.text = AnswerInput.text.Length.ToString();
-            //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
-            //{
-            //    AnswerControl();
-            //}
-        }
+        //if (TouchScreenKeyboard.visible == false && Keyboard != null)
+        //{
+        //    //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
+        //    //{
+        //    //    AnswerControl();
+        //    //}
+        //}
     }
 
     public void AnswerControl()
@@ -158,6 +157,11 @@ public class UIManager : MonoBehaviour
     public void WinStatus()
     {
         StartCoroutine(WinTimer());
+    }
+
+    public void StringLeght()
+    {
+        TextCountText.text = AnswerInput.text.Length.ToString();
     }
 
     private IEnumerator FailTimer()
