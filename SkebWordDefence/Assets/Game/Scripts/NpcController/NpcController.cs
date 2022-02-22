@@ -11,6 +11,7 @@ public class NpcController : MonoBehaviour
     private float rnd;
     [SerializeField] private bool lineControl = false;
     private bool _attackControl = false;
+    private bool _chase = false;
     public bool _deadStatus = false;
 
     public TowerG AttackTower;
@@ -112,7 +113,10 @@ public class NpcController : MonoBehaviour
 
     private void MoveSystem()
     {
-        transform.Translate(0, 0, _speed * Time.deltaTime);
+        if (!_chase)
+        {
+            transform.Translate(0, 0, _speed * Time.deltaTime);
+        }
     }
 
     public void AttackTowerDamage()
@@ -168,19 +172,29 @@ public class NpcController : MonoBehaviour
     {
         if (other.gameObject.tag == "Tower")
         {
-            AttackTower = other.GetComponent<TowerG>();
-            NpcState = NpcState.ATTACK;
+            if (GameManager.Instance.GameState!=GameState.FAIL)
+            {
+                AttackTower = other.GetComponent<TowerG>();
+                NpcState = NpcState.ATTACK;
+            }
+            
         }
         if (other.gameObject.tag == "Player")
         {
-            GameManager.Instance.Player.PlayerState = PlayerState.DEAD;
+            if (GameManager.Instance.GameState != GameState.FAIL)
+            {
+                GameManager.Instance.Player.PlayerState = PlayerState.DEAD;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Tower")
         {
-            _attackControl = false;
+            if (GameManager.Instance.GameState != GameState.FAIL)
+            {
+                _attackControl = false;
+            }
         }
     }
 
@@ -205,13 +219,13 @@ public class NpcController : MonoBehaviour
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 20f)
             {
+                //_chase = true;
                 var rnd = UnityEngine.Random.Range(12f, 16f);
                 Speed = rnd;
+
                 //transform.DOLookAt(GameManager.Instance.Player.transform.position, 0.5f);
                 var player = GameManager.Instance.Player;
                 var looPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-                //Vector3 dir = player.transform.position - transform.position;
-                //transform.position += new Vector3(Time.deltaTime * dir.x, transform.position.y, Time.deltaTime * dir.z);
                 transform.DOLookAt(looPos, 0.5f);
             }
             //else

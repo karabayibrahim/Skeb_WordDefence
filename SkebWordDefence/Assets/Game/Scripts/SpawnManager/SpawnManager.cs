@@ -63,7 +63,7 @@ public class SpawnManager : ScriptableObject
             case 7:
                 var newTower6 = Instantiate(Towers[5], new Vector3(0, 0, PosZ), Quaternion.identity);
                 newTower6.GetComponent<TowerG>().MyString = playerInput;
-                newTower6.GetComponent<TowerG>()._speed = -10f;
+                newTower6.GetComponent<TowerG>()._speed = -12f;
                 newTower6.transform.rotation = Quaternion.Euler(0, 180, 0);
                 StartScaleEffeckt(newTower6.gameObject);
                 break;

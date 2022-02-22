@@ -53,18 +53,19 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (TouchScreenKeyboard.visible == false && Keyboard != null)
-        //{
-        //    //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
-        //    //{
-        //    //    AnswerControl();
-        //    //}
-        //}
+        if (TouchScreenKeyboard.visible == false && Keyboard != null)
+        {
+            StringLeght();
+            //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
+            //{
+            //    AnswerControl();
+            //}
+        }
     }
 
     public void AnswerControl()
     {
-        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[GameManager.Instance.LevelIndex].Answers.ToLower();
+        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[GameManager.Instance.LevelIndex-1].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
         if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
@@ -147,7 +148,7 @@ public class UIManager : MonoBehaviour
 
     private void AdjustQuestionText()
     {
-        QuestText.text = GameManager.Instance.QuestionData.Questions[GameManager.Instance.LevelIndex];
+        QuestText.text = GameManager.Instance.QuestionData.Questions[GameManager.Instance.LevelIndex-1];
     }
 
     public void FailStatus()

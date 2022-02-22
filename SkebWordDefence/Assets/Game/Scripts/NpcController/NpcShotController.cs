@@ -13,7 +13,7 @@ public class NpcShotController : MonoBehaviour
     public GameObject Bullet;
     public Transform StartShootPoz;
     public bool AttackStatus = false;
-    private float fireRate = 0.1f;
+    private float fireRate = 0f;
     private float lastShot = 0;
     private bool _targetControl = false;
 
@@ -115,7 +115,7 @@ public class NpcShotController : MonoBehaviour
             lastShot = Time.time;
             var newBullet = Instantiate(Bullet, StartShootPoz.position, Quaternion.identity);
             newBullet.transform.LookAt(_targetObj.transform.position);
-            BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.5f);
+            BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.4f);
         }
         
     }

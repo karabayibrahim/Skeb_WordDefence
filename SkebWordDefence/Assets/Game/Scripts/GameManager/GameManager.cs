@@ -20,13 +20,11 @@ public class GameManager : MonoSingleton<GameManager>
     private GameState _gameState;
 
     [SerializeField] private int _levelIndex = 0;
-    void Start()
+    void Awake()
     {
         _levelIndex = SceneManager.GetActiveScene().buildIndex;
-        for (int i = 0; i < SpawnCount; i++)
-        {
-            SpawnManager.SpawnObjectMethod();
-        }
+        Debug.Log(LevelIndex);
+        InvokeRepeating("SpawnNpc", 0, 10f);
 
     }
 
@@ -74,6 +72,7 @@ public class GameManager : MonoSingleton<GameManager>
         }
     }
 
+
     public int LevelIndex
     {
         get
@@ -103,6 +102,14 @@ public class GameManager : MonoSingleton<GameManager>
             {
                 SpawnManager.SpawnObjectMethod();
             }
+        }
+    }
+
+    public void SpawnNpc()
+    {
+        for (int i = 0; i < SpawnCount; i++)
+        {
+            SpawnManager.SpawnObjectMethod();
         }
     }
 }
