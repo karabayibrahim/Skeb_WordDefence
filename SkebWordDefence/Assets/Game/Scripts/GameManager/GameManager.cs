@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 public class GameManager : MonoSingleton<GameManager>
 {
     public PlayerController Player;
@@ -11,6 +12,8 @@ public class GameManager : MonoSingleton<GameManager>
     public AnswerDataPack AnswerDataPack;
     public QuesTion QuestionData;
     public UIManager UIManager;
+    public Car FinalCar;
+    public CinemachineVirtualCamera LevelCam;
     public List<GameObject> NpcList = new List<GameObject>();
     public List<GameObject> Particles = new List<GameObject>();
     public int SpawnCount;
@@ -25,7 +28,13 @@ public class GameManager : MonoSingleton<GameManager>
         _levelIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log(LevelIndex);
         InvokeRepeating("SpawnNpc", 0, 10f);
+        Finish.FinishAction += FinishStatus;
 
+    }
+
+    private void OnDisable()
+    {
+        Finish.FinishAction -= FinishStatus;
     }
 
     public GameState GameState
@@ -59,12 +68,6 @@ public class GameManager : MonoSingleton<GameManager>
                 UIManager.FailStatus();
                 break;
             case GameState.WIN:
-                foreach (var item in NpcList)
-                {
-                    var newParticle = Instantiate(Particles[2], item.transform.position, Quaternion.identity);
-                    Destroy(newParticle, 1f);
-                    Destroy(item.gameObject);
-                }
                 UIManager.WinStatus();
                 break;
             default:
@@ -111,5 +114,12 @@ public class GameManager : MonoSingleton<GameManager>
         {
             SpawnManager.SpawnObjectMethod();
         }
+    }
+
+    private void FinishStatus()
+    {
+        LevelCam.Follow = null;
+        LevelCam.LookAt = null;
+        CancelInvoke();
     }
 }

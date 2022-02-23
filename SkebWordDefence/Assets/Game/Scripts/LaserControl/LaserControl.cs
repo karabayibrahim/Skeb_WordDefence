@@ -10,7 +10,7 @@ public class LaserControl : MonoBehaviour
 
     private bool _targetControl = false;
     private Transform _targetObj;
-    private float fireRate = 0.2f;
+    private float fireRate = 0.5f;
     private float lastShot = 0;
     [SerializeField] private Animator _anim;
     [SerializeField]private Transform StartShootPoz;
@@ -38,7 +38,7 @@ public class LaserControl : MonoBehaviour
         {
             _anim.CrossFade("Idle",0.01f);
         }
-        if (_spawnControl)
+        if (_spawnControl&&Enemys.Count>0)
         {
             ShotMethod();
         }
@@ -83,19 +83,23 @@ public class LaserControl : MonoBehaviour
         {
             if (gameObject!=null)
             {
+                _anim.CrossFade("Shot", 0.01f);
                 var newParticle = Instantiate(GameManager.Instance.Particles[1], StartShootPoz.position, Quaternion.identity);
                 var newParticle2 = Instantiate(GameManager.Instance.Particles[1], StartShootPoz2.position, Quaternion.identity);
                 Destroy(newParticle, 0.1f);
                 Destroy(newParticle2, 0.1f);
-                _anim.CrossFade("Shot", 0.01f);
                 //Debug.Log("LaserShot");
                 lastShot = Time.time;
                 var newBullet = Instantiate(LaserBullet, StartShootPoz.position, Quaternion.identity);
                 var newBullet2 = Instantiate(LaserBullet, StartShootPoz2.position, Quaternion.identity);
-                newBullet.transform.LookAt(_targetObj.transform.position);
-                newBullet2.transform.LookAt(_targetObj.transform.position);
-                BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.4f);
-                BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.4f);
+                if (_targetObj!=null)
+                {
+                    newBullet.transform.LookAt(_targetObj.transform.position);
+                    newBullet2.transform.LookAt(_targetObj.transform.position);
+                    BulletTween = newBullet.transform.DOMove(_targetObj.transform.position, 0.4f);
+                    BulletTween2 = newBullet2.transform.DOMove(_targetObj.transform.position, 0.4f);
+                }
+                
             }
             
         }

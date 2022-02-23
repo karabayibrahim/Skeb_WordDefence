@@ -91,6 +91,12 @@ public class NpcController : MonoBehaviour
         _anim.SetFloat("Offset", UnityEngine.Random.Range(0, 1f));
         NpcState = NpcState.RUN;
         InvokeRepeating("ZigZag", 2f, 3f);
+        Finish.FinishAction += FinishStatus;
+    }
+
+    private void OnDisable()
+    {
+        Finish.FinishAction -= FinishStatus;
     }
 
     // Update is called once per frame
@@ -266,5 +272,11 @@ public class NpcController : MonoBehaviour
 
 
 
+    }
+
+    private void FinishStatus()
+    {
+        NpcState = NpcState.IDLE;
+        this.enabled = false;
     }
 }

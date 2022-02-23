@@ -173,9 +173,9 @@ public class UIManager : MonoBehaviour
     }
     private IEnumerator WinTimer()
     {
-        GameManager.Instance.GameState = GameState.WIN;
-        yield return new WaitForSeconds(3f);
         GamePanel.SetActive(false);
+        GameManager.Instance.GameState = GameState.WIN;
+        yield return new WaitForSeconds(8f);
         WinPanel.SetActive(true);
     }
 }

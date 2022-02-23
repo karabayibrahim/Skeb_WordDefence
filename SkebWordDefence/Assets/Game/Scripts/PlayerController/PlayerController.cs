@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.WIN:
                 Speed = 0f;
-                _anim.CrossFade("Win", 0.05f);
+                _anim.CrossFade("Jump", 0.05f);
                 break;
             case PlayerState.DEAD:
                 Speed = 0f;
@@ -104,5 +104,14 @@ public class PlayerController : MonoBehaviour
     private void FinishStatus()
     {
         PlayerState = PlayerState.WIN;
+    }
+
+    public void FinishAnimation()
+    {
+        GameManager.Instance.FinalCar.GetComponent<Animator>().CrossFade("FinalCar", 0.01f);
+        GameManager.Instance.FinalCar.Particle1.SetActive(true);
+        GameManager.Instance.FinalCar.Particle2.SetActive(true);
+        GameManager.Instance.FinalCar.Turn = true;
+        gameObject.SetActive(false);
     }
 }
