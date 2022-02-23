@@ -132,7 +132,7 @@ public class NpcController : MonoBehaviour
             case TowerType.WOOD:
                 if (AttackTower != null)
                 {
-                    AttackTower.Healt -= 20f;
+                    AttackTower.Healt -= 25f;
                 }
                 else
                 {
@@ -142,7 +142,7 @@ public class NpcController : MonoBehaviour
             case TowerType.STONE:
                 if (AttackTower != null)
                 {
-                    AttackTower.Healt -= 10f;
+                    AttackTower.Healt -= 15f;
                 }
                 else
                 {
@@ -152,7 +152,7 @@ public class NpcController : MonoBehaviour
             case TowerType.CONCREATE:
                 if (AttackTower != null)
                 {
-                    AttackTower.Healt -= 7f;
+                    AttackTower.Healt -= 12f;
                 }
                 else
                 {
@@ -162,7 +162,7 @@ public class NpcController : MonoBehaviour
             case TowerType.LASER:
                 if (AttackTower != null)
                 {
-                    AttackTower.Healt -= 5f;
+                    AttackTower.Healt -= 10f;
                 }
                 else
                 {
@@ -220,7 +220,7 @@ public class NpcController : MonoBehaviour
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 50f)
             {
-                var rnd = UnityEngine.Random.Range(18f, 25f);
+                var rnd = UnityEngine.Random.Range(23f, 30f);
                 Speed = rnd;
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 20f)

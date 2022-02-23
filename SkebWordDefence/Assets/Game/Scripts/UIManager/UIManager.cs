@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
         LevelText.text = "LEVEL" + " " + SceneManager.GetActiveScene().buildIndex.ToString();
         RestartButton.onClick.AddListener(RestartStatus);
         RetryButton.onClick.AddListener(RestartStatus);
+        NextButton.onClick.AddListener(NextLevel);
         Finish.FinishAction += WinStatus;
     }
 
@@ -65,7 +66,7 @@ public class UIManager : MonoBehaviour
 
     public void AnswerControl()
     {
-        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[GameManager.Instance.LevelIndex-1].Answers.ToLower();
+        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[PlayerPrefs.GetInt("LevelIndex")].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
         if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
@@ -148,7 +149,7 @@ public class UIManager : MonoBehaviour
 
     private void AdjustQuestionText()
     {
-        QuestText.text = GameManager.Instance.QuestionData.Questions[GameManager.Instance.LevelIndex-1];
+        QuestText.text = GameManager.Instance.QuestionData.Questions[PlayerPrefs.GetInt("LevelIndex")];
     }
 
     public void FailStatus()
@@ -158,6 +159,19 @@ public class UIManager : MonoBehaviour
     public void WinStatus()
     {
         StartCoroutine(WinTimer());
+    }
+    public void NextLevel()
+    {
+        PlayerPrefs.SetInt("LevelIndex",PlayerPrefs.GetInt("LevelIndex") + 1);
+        if (PlayerPrefs.GetInt("LevelIndex") > 17)
+        {
+            SceneManager.LoadScene("Level" + Random.Range(5, 17));
+        }
+        else
+        {
+
+            SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("LevelIndex"));
+        }
     }
 
     public void StringLeght()

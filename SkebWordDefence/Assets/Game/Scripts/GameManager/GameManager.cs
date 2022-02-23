@@ -25,7 +25,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private int _levelIndex = 0;
     void Awake()
     {
-        _levelIndex = SceneManager.GetActiveScene().buildIndex;
+        _levelIndex = PlayerPrefs.GetInt("LevelIndex");
         Debug.Log(LevelIndex);
         InvokeRepeating("SpawnNpc", 0, 10f);
         Finish.FinishAction += FinishStatus;
@@ -61,6 +61,7 @@ public class GameManager : MonoSingleton<GameManager>
             case GameState.START:
                 break;
             case GameState.FAIL:
+                CancelInvoke();
                 foreach (var item in NpcList)
                 {
                     item.GetComponent<NpcController>().NpcState = NpcState.IDLE;

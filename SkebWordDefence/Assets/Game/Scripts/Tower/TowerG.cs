@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using TapticPlugin;
+
 public class TowerG : MonoBehaviour
 {
     private float _healt = 100f;
@@ -35,6 +37,7 @@ public class TowerG : MonoBehaviour
     {
         if (Healt <= 0)
         {
+            TapticManager.Impact(ImpactFeedback.Heavy);
             foreach (var item in GetComponents<Collider>())
             {
                 item.enabled = false;
@@ -110,6 +113,7 @@ public class TowerG : MonoBehaviour
         }
         foreach (var item in TowerPiace)
         {
+            TapticManager.Impact(ImpactFeedback.Light);
             ShooterPosSet();
             if (item.gameObject.tag == "Tas")
             {
