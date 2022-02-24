@@ -12,6 +12,10 @@ public class UIManager : MonoBehaviour
     public List<string> OldAnswers = new List<string>();
     public TextMeshProUGUI TextCountText;
     private bool _answerControl = false;
+    private float _fullDisntance;
+    private float _newDistance;
+    private float _fullFlag;
+    private float _newFlag;
     [Header("AnswerPanel")]
     public GameObject AnswerPanel;
     [Header("QuestionPanel")]
@@ -23,6 +27,9 @@ public class UIManager : MonoBehaviour
     public GameObject Wrong;
     public GameObject TrueA;
     public GameObject AnswerText;
+    public Image Bar;
+    public Image Flag;
+    public Image Slice;
     [Header("FailPanel")]
     public GameObject FailPanel;
     public Button RestartButton;
@@ -42,6 +49,8 @@ public class UIManager : MonoBehaviour
         RetryButton.onClick.AddListener(RestartStatus);
         NextButton.onClick.AddListener(NextLevel);
         Finish.FinishAction += WinStatus;
+        _fullDisntance = Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
+        _fullFlag= Vector3.Distance(Slice.rectTransform.position, Flag.rectTransform.position);
     }
 
     private void OnDisable()
@@ -57,11 +66,13 @@ public class UIManager : MonoBehaviour
         if (TouchScreenKeyboard.visible == false && Keyboard != null)
         {
             StringLeght();
+            Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
             //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
             //{
             //    AnswerControl();
             //}
         }
+        BarProgress();
     }
 
     public void AnswerControl()
@@ -191,5 +202,11 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.GameState = GameState.WIN;
         yield return new WaitForSeconds(8f);
         WinPanel.SetActive(true);
+    }
+
+    private void BarProgress()
+    {
+        _newDistance= Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
+        Bar.fillAmount = Mathf.InverseLerp(0, _fullDisntance, _newDistance);
     }
 }

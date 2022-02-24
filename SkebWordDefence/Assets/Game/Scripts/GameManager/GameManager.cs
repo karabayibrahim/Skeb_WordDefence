@@ -14,6 +14,7 @@ public class GameManager : MonoSingleton<GameManager>
     public UIManager UIManager;
     public Car FinalCar;
     public CinemachineVirtualCamera LevelCam;
+    public Finish Finish;
     public List<GameObject> NpcList = new List<GameObject>();
     public List<GameObject> Particles = new List<GameObject>();
     public int SpawnCount;
