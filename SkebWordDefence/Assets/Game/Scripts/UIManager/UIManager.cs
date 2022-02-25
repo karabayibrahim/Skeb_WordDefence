@@ -74,6 +74,15 @@ public class UIManager : MonoBehaviour
                 Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
                 InText.rectTransform.position = IntextPos;
             }
+            if (GameManager.Instance.GameState == GameState.FAIL)
+            {
+                KDeselect();
+            }
+            else if (GameManager.Instance.GameState == GameState.WIN)
+            {
+                KDeselect();
+            }
+
             //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
             //{
             //    AnswerControl();
