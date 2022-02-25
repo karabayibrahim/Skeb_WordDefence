@@ -65,7 +65,10 @@ public class UIManager : MonoBehaviour
         if (TouchScreenKeyboard.visible == false && Keyboard != null)
         {
             StringLeght();
-            Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+            if (GameManager.Instance.GameState==GameState.START)
+            {
+                Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+            }
             //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
             //{
             //    AnswerControl();
