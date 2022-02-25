@@ -77,6 +77,7 @@ public class NpcController : MonoBehaviour
             case NpcState.DEAD:
                 _deadStatus = true;
                 Speed = 0f;
+                gameObject.GetComponentInChildren<Renderer>().material.color = new Color(87f / 255f, 87f / 255f, 87f / 255f);
                 _anim.CrossFade("Dead", 0.05f);
                 _anim.SetLayerWeight(1, 0);
                 break;
@@ -178,12 +179,12 @@ public class NpcController : MonoBehaviour
     {
         if (other.gameObject.tag == "Tower")
         {
-            if (GameManager.Instance.GameState!=GameState.FAIL)
+            if (GameManager.Instance.GameState != GameState.FAIL)
             {
                 AttackTower = other.GetComponent<TowerG>();
                 NpcState = NpcState.ATTACK;
             }
-            
+
         }
         if (other.gameObject.tag == "Player")
         {
@@ -191,6 +192,12 @@ public class NpcController : MonoBehaviour
             {
                 GameManager.Instance.Player.PlayerState = PlayerState.DEAD;
             }
+        }
+        if (other.gameObject.tag == "Car")
+        {
+
+            NpcState = NpcState.DEAD;
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -233,6 +240,7 @@ public class NpcController : MonoBehaviour
                 var player = GameManager.Instance.Player;
                 var looPos = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
                 transform.DOLookAt(looPos, 0.5f);
+                //transform.DORotate(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + acı, transform.eulerAngles.z), 0.5f);
             }
             //else
             //{
@@ -277,6 +285,6 @@ public class NpcController : MonoBehaviour
     private void FinishStatus()
     {
         NpcState = NpcState.IDLE;
-        this.enabled = false;
+        //this.enabled = false;
     }
 }

@@ -44,13 +44,12 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         AdjustQuestionText();
-        LevelText.text = "LEVEL" + " " + SceneManager.GetActiveScene().buildIndex.ToString();
+        LevelText.text = "LEVEL" + " " + (PlayerPrefs.GetInt("LevelIndex")+1).ToString();
         RestartButton.onClick.AddListener(RestartStatus);
         RetryButton.onClick.AddListener(RestartStatus);
         NextButton.onClick.AddListener(NextLevel);
         Finish.FinishAction += WinStatus;
         _fullDisntance = Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
-        _fullFlag= Vector3.Distance(Slice.rectTransform.position, Flag.rectTransform.position);
     }
 
     private void OnDisable()
@@ -80,7 +79,7 @@ public class UIManager : MonoBehaviour
         string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[PlayerPrefs.GetInt("LevelIndex")].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
-        if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
+        if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
         {
             //Debug.Log("Var");
             OldAnswers.Add(playerInput);
@@ -208,5 +207,7 @@ public class UIManager : MonoBehaviour
     {
         _newDistance= Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
         Bar.fillAmount = Mathf.InverseLerp(0, _fullDisntance, _newDistance);
+        Slice.rectTransform.anchorMin = new Vector2(Slice.rectTransform.anchorMin.x, Bar.fillAmount);
+        Slice.rectTransform.anchorMax = new Vector2(Slice.rectTransform.anchorMax.x, Bar.fillAmount);
     }
 }
