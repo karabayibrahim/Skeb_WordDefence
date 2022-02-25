@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         AdjustQuestionText();
-        LevelText.text = "LEVEL" + " " + (PlayerPrefs.GetInt("LevelIndex")+1).ToString();
+        LevelText.text = "LEVEL" + " " + (PlayerPrefs.GetInt("LevelIndex")).ToString();
         RestartButton.onClick.AddListener(RestartStatus);
         RetryButton.onClick.AddListener(RestartStatus);
         NextButton.onClick.AddListener(NextLevel);
@@ -89,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     public void AnswerControl()
     {
-        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[PlayerPrefs.GetInt("LevelIndex")].Answers.ToLower();
+        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[(PlayerPrefs.GetInt("LevelIndex")-1)].Answers.ToLower();
         string playerInput = AnswerInput.text.ToLower();
         AnswerCheck(playerInput);
         if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
@@ -107,6 +107,7 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f, playerInput);
             TrueAnswer();
             AnswerInput.text = "";
+
         }
         else
         {
@@ -174,7 +175,7 @@ public class UIManager : MonoBehaviour
 
     private void AdjustQuestionText()
     {
-        QuestText.text = GameManager.Instance.QuestionData.Questions[PlayerPrefs.GetInt("LevelIndex")];
+        QuestText.text = GameManager.Instance.QuestionData.Questions[(PlayerPrefs.GetInt("LevelIndex")-1)];
     }
 
     public void FailStatus()
@@ -187,7 +188,7 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        PlayerPrefs.SetInt("LevelIndex",PlayerPrefs.GetInt("LevelIndex") + 1);
+        PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex")));
         if (PlayerPrefs.GetInt("LevelIndex") > 17)
         {
             SceneManager.LoadScene("Level" + Random.Range(5, 17));
@@ -195,7 +196,7 @@ public class UIManager : MonoBehaviour
         else
         {
 
-            SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("LevelIndex"));
+            SceneManager.LoadScene("Level" + (PlayerPrefs.GetInt("LevelIndex")));
         }
     }
 
