@@ -16,11 +16,13 @@ public class UIManager : MonoBehaviour
     private float _newDistance;
     private float _fullFlag;
     private float _newFlag;
+    private Vector2 IntextPos;
     [Header("AnswerPanel")]
     public GameObject AnswerPanel;
     [Header("QuestionPanel")]
     public TMP_Text QuestText;
     [Header("GamePanel")]
+    public TMP_Text InText;
     public GameObject GamePanel;
     public TMP_Text LevelText;
     public Button RetryButton;
@@ -50,6 +52,7 @@ public class UIManager : MonoBehaviour
         NextButton.onClick.AddListener(NextLevel);
         Finish.FinishAction += WinStatus;
         _fullDisntance = Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
+        IntextPos = InText.rectTransform.position;
     }
 
     private void OnDisable()
@@ -68,6 +71,7 @@ public class UIManager : MonoBehaviour
             if (GameManager.Instance.GameState==GameState.START)
             {
                 Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+                InText.rectTransform.position = IntextPos;
             }
             //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
             //{
