@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     private float _newDistance;
     private float _fullFlag;
     private float _newFlag;
+    private bool KeywordControl = false;
     private Vector2 IntextPos;
     [Header("AnswerPanel")]
     public GameObject AnswerPanel;
@@ -68,7 +69,7 @@ public class UIManager : MonoBehaviour
         if (TouchScreenKeyboard.visible == false && Keyboard != null)
         {
             StringLeght();
-            if (GameManager.Instance.GameState==GameState.START)
+            if (GameManager.Instance.GameState==GameState.START&&!KeywordControl)
             {
                 Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
                 InText.rectTransform.position = IntextPos;
@@ -81,6 +82,11 @@ public class UIManager : MonoBehaviour
         BarProgress();
     }
 
+    public void KDeselect()
+    {
+        KeywordControl = true;
+    }
+
     public void AnswerControl()
     {
         string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[PlayerPrefs.GetInt("LevelIndex")].Answers.ToLower();
@@ -89,6 +95,7 @@ public class UIManager : MonoBehaviour
         if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
         {
             //Debug.Log("Var");
+            KeywordControl = true;
             OldAnswers.Add(playerInput);
             var textCount = playerInput.Length;
             if (textCount > 9)
@@ -141,6 +148,7 @@ public class UIManager : MonoBehaviour
     public void OpenKeyboard()
     {
         Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        KeywordControl = false;
     }
 
     private void AnswerCheck(string _playerInput)
