@@ -14,10 +14,7 @@ public class UIManager : MonoBehaviour
     private bool _answerControl = false;
     private float _fullDisntance;
     private float _newDistance;
-    private float _fullFlag;
-    private float _newFlag;
-    private bool KeywordControl = false;
-    private Vector2 IntextPos;
+    public bool _active = false;
     [Header("AnswerPanel")]
     public GameObject AnswerPanel;
     [Header("QuestionPanel")]
@@ -53,7 +50,6 @@ public class UIManager : MonoBehaviour
         NextButton.onClick.AddListener(NextLevel);
         Finish.FinishAction += WinStatus;
         _fullDisntance = Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
-        IntextPos = InText.rectTransform.position;
     }
 
     private void OnDisable()
@@ -66,63 +62,62 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TouchScreenKeyboard.visible == false && Keyboard != null)
+        //if (TouchScreenKeyboard.visible ==true && Keyboard != null)
+        //{
+        //    StringLeght();
+        //    //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
+        //    //{
+        //    //    AnswerControl();
+        //    //}
+        //}
+        if (GameManager.Instance.GameState!=GameState.START)
         {
-            StringLeght();
-            if (GameManager.Instance.GameState==GameState.START&&!KeywordControl)
-            {
-                Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-                InText.rectTransform.position = IntextPos;
-            }
-            if (GameManager.Instance.GameState == GameState.FAIL)
-            {
-                KDeselect();
-            }
-            else if (GameManager.Instance.GameState == GameState.WIN)
-            {
-                KDeselect();
-            }
-
-            //if (Keyboard.status == TouchScreenKeyboard.Status.Done)
-            //{
-            //    AnswerControl();
-            //}
+            _active = true;
         }
         BarProgress();
+        StringLeght();
     }
 
-    public void KDeselect()
+    public void DeSelect()
     {
-        KeywordControl = true;
+        _active = true;
     }
 
     public void AnswerControl()
     {
-        string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[(PlayerPrefs.GetInt("LevelIndex")-1)].Answers.ToLower();
-        string playerInput = AnswerInput.text.ToLower();
-        AnswerCheck(playerInput);
-        if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
+        if (!_active)
         {
-            //Debug.Log("Var");
-            KeywordControl = true;
-            OldAnswers.Add(playerInput);
-            var textCount = playerInput.Length;
-            if (textCount > 9)
+            Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+            AnswerInput.ActivateInputField();
+            string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[(PlayerPrefs.GetInt("LevelIndex") - 1)].Answers.ToLower();
+            string playerInput = AnswerInput.text.ToLower();
+            AnswerCheck(playerInput);
+            if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
             {
-                textCount = 9;
-            }
-            GameManager.Instance.FirstSpawn = true;
-            //GameManager.Instance.Player.AnswerStatus(textCount);
-            GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f, playerInput);
-            TrueAnswer();
-            AnswerInput.text = "";
+                //Debug.Log("Var");
+                OldAnswers.Add(playerInput);
+                var textCount = playerInput.Length;
+                if (textCount > 9)
+                {
+                    textCount = 9;
+                }
+                GameManager.Instance.FirstSpawn = true;
+                //GameManager.Instance.Player.AnswerStatus(textCount);
+                GameManager.Instance.SpawnManager.TowerSpawn(textCount, GameManager.Instance.Player.transform.position.z + 5f, playerInput);
+                TrueAnswer();
+                AnswerInput.text = "";
 
+            }
+            else
+            {
+                if (playerInput.Length > 1)
+                {
+                    WrongAnswer();
+                }
+            }
         }
-        else
-        {
-            WrongAnswer();
-            //Debug.Log("Yok");
-        }
+        
+
     }
 
     public void WrongAnswer()
@@ -157,8 +152,8 @@ public class UIManager : MonoBehaviour
 
     public void OpenKeyboard()
     {
+        _active = false;
         Keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
-        KeywordControl = false;
     }
 
     private void AnswerCheck(string _playerInput)

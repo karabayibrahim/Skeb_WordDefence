@@ -2379,7 +2379,18 @@ MonoBehaviour:
         m_CallState: 2
   m_OnDeselect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213496309}
+        m_MethodName: DeSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTextSelection:
     m_PersistentCalls:
       m_Calls: []
@@ -2388,7 +2399,18 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1213496309}
+        m_MethodName: StringLeght
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3392,7 +3414,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640611020}
-  m_LocalRotation: {x: 0.34774065, y: -1.739256e-11, z: 0.000000037560667, w: 0.9375908}
+  m_LocalRotation: {x: 0.34774068, y: -0.00000003228248, z: 0.000000049527383, w: 0.9375908}
   m_LocalPosition: {x: 0, y: 74.23, z: -10.700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5333,7 +5355,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.34774065, y: -1.739256e-11, z: 0.000000037560667, w: 0.9375908}
+  m_LocalRotation: {x: 0.34774068, y: -0.00000003228248, z: 0.000000049527383, w: 0.9375908}
   m_LocalPosition: {x: 0, y: 74.23, z: -10.700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6355,8 +6377,10 @@ MonoBehaviour:
   AnswerInput: {fileID: 462704690}
   OldAnswers: []
   TextCountText: {fileID: 2087041853}
+  _active: 0
   AnswerPanel: {fileID: 462704688}
   QuestText: {fileID: 1517189606}
+  InText: {fileID: 0}
   GamePanel: {fileID: 18975384}
   LevelText: {fileID: 1322104035}
   RetryButton: {fileID: 1595595270}
