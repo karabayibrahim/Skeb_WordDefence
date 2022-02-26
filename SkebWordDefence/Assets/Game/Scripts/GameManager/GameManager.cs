@@ -17,7 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Finish Finish;
     public List<GameObject> NpcList = new List<GameObject>();
     public List<GameObject> Particles = new List<GameObject>();
-    public int SpawnCount;
+    [SerializeField] private int SpawnCount;
     public int WordCount;
     public bool FirstSpawn = false;
 
@@ -30,7 +30,7 @@ public class GameManager : MonoSingleton<GameManager>
         Debug.Log(LevelIndex);
         InvokeRepeating("SpawnNpc", 0, 10f);
         Finish.FinishAction += FinishStatus;
-
+        SpawnCountLevelAdjust();
     }
 
     private void OnDisable()
@@ -123,5 +123,11 @@ public class GameManager : MonoSingleton<GameManager>
         LevelCam.Follow = null;
         LevelCam.LookAt = null;
         CancelInvoke();
+    }
+
+    private void SpawnCountLevelAdjust()
+    {
+        SpawnCount = 50;
+        SpawnCount += PlayerPrefs.GetInt("LevelIndex") * 2;
     }
 }

@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        PlayerPos();
         Finish.FinishAction += FinishStatus;
         _anim = GetComponent<Animator>();
         PlayerState = PlayerState.RUN;
@@ -113,5 +114,13 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.FinalCar.Particle2.SetActive(true);
         GameManager.Instance.FinalCar.Turn = true;
         gameObject.SetActive(false);
+    }
+
+    private void PlayerPos()
+    {
+        if (PlayerPrefs.GetInt("LevelIndex")>1)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + PlayerPrefs.GetInt("LevelIndex") * 10);
+        }
     }
 }

@@ -85,7 +85,7 @@ public class NpcShotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Enemys.Count <= 0)
+        if (Enemys.Count <= 0||GameManager.Instance.GameState!=GameState.START)
         {
             NpcState = NpcState.IDLE;
         }

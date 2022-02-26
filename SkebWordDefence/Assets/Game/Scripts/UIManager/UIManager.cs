@@ -5,12 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System;
 public class UIManager : MonoBehaviour
 {
     public TMP_InputField AnswerInput;
     public TouchScreenKeyboard Keyboard;
     public List<string> OldAnswers = new List<string>();
     public TextMeshProUGUI TextCountText;
+    public static Action WrongAction;
     private bool _answerControl = false;
     private float _fullDisntance;
     private float _newDistance;
@@ -97,7 +99,7 @@ public class UIManager : MonoBehaviour
             string answerdatastring = GameManager.Instance.AnswerDataPack.AnswerDatas[(PlayerPrefs.GetInt("LevelIndex") - 1)].Answers.ToLower();
             string playerInput = AnswerInput.text.ToLower();
             AnswerCheck(playerInput);
-            if (answerdatastring.Contains("" + playerInput + "") && playerInput.Length > 1 && !_answerControl)
+            if (answerdatastring.Contains(" " + playerInput + " ") && playerInput.Length > 1 && !_answerControl)
             {
                 //Debug.Log("Var");
                 OldAnswers.Add(playerInput);
@@ -127,6 +129,7 @@ public class UIManager : MonoBehaviour
 
     public void WrongAnswer()
     {
+        WrongAction?.Invoke();
         TrueTween.Kill();
         TrueColor.Kill();
         Wrong.SetActive(true);
@@ -200,7 +203,7 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex")+1));
         if (PlayerPrefs.GetInt("LevelIndex") > 17)
         {
-            SceneManager.LoadScene("Level" + Random.Range(5, 17));
+            SceneManager.LoadScene("Level" + UnityEngine.Random.Range(5, 17));
         }
         else
         {

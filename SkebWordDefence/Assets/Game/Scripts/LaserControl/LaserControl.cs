@@ -34,7 +34,7 @@ public class LaserControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Enemys.Count <= 0)
+        if (Enemys.Count <= 0||GameManager.Instance.GameState!=GameState.START)
         {
             _anim.CrossFade("Idle",0.01f);
         }

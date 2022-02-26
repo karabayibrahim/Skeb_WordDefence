@@ -63,6 +63,8 @@ public class TowerG : MonoBehaviour
         //}
     }
 
+
+
     private void OnDisable()
     {
         Finish.FinishAction -= FinishStatus;

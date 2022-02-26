@@ -12,6 +12,7 @@ public class NpcController : MonoBehaviour
     [SerializeField] private bool lineControl = false;
     private bool _attackControl = false;
     private bool _chase = false;
+    private bool _wrongStatus = false;
     public bool _deadStatus = false;
 
     public TowerG AttackTower;
@@ -93,11 +94,13 @@ public class NpcController : MonoBehaviour
         NpcState = NpcState.RUN;
         InvokeRepeating("ZigZag", 2f, 3f);
         Finish.FinishAction += FinishStatus;
+        UIManager.WrongAction += WrongSpeed;
     }
 
     private void OnDisable()
     {
         Finish.FinishAction -= FinishStatus;
+        UIManager.WrongAction -= WrongSpeed;
     }
 
     // Update is called once per frame
@@ -213,7 +216,7 @@ public class NpcController : MonoBehaviour
 
     private void PlayerControl()
     {
-        if (!_attackControl && !_deadStatus)
+        if (!_attackControl && !_deadStatus&&!_wrongStatus)
         {
             if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 5f)
             {
@@ -284,7 +287,24 @@ public class NpcController : MonoBehaviour
 
     private void FinishStatus()
     {
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
         NpcState = NpcState.IDLE;
         //this.enabled = false;
+    }
+
+    private void WrongSpeed()
+    {
+        StartCoroutine(WrongTime());
+    }
+
+    private IEnumerator WrongTime()
+    {
+        Debug.Log("Yavaşladı");
+        _wrongStatus = true;
+        var rnd = UnityEngine.Random.Range(10f, 20f);
+        Speed = rnd;
+        yield return new WaitForSeconds(3f);
+        _wrongStatus = false;
+        yield break;
     }
 }
