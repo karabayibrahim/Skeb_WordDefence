@@ -70,7 +70,11 @@ public class UIManager : MonoBehaviour
         //    //    AnswerControl();
         //    //}
         //}
-        if (GameManager.Instance.GameState!=GameState.START)
+        if (GameManager.Instance.GameState==GameState.FAIL)
+        {
+            _active = true;
+        }
+        else if (GameManager.Instance.GameState == GameState.WIN)
         {
             _active = true;
         }
@@ -192,7 +196,7 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex")));
+        PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex")+1));
         if (PlayerPrefs.GetInt("LevelIndex") > 17)
         {
             SceneManager.LoadScene("Level" + Random.Range(5, 17));
