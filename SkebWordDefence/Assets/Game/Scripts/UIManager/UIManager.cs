@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public Image Bar;
     public Image Flag;
     public Image Slice;
+    public Image ManIcon;
     [Header("FailPanel")]
     public GameObject FailPanel;
     public Button RestartButton;
@@ -233,5 +234,7 @@ public class UIManager : MonoBehaviour
         Bar.fillAmount = Mathf.InverseLerp(0, _fullDisntance, _newDistance);
         Slice.rectTransform.anchorMin = new Vector2(Slice.rectTransform.anchorMin.x, Bar.fillAmount);
         Slice.rectTransform.anchorMax = new Vector2(Slice.rectTransform.anchorMax.x, Bar.fillAmount);
+        ManIcon.rectTransform.anchorMin = new Vector2(ManIcon.rectTransform.anchorMin.x, Bar.fillAmount);
+        ManIcon.rectTransform.anchorMax = new Vector2(ManIcon.rectTransform.anchorMax.x, Bar.fillAmount);
     }
 }
