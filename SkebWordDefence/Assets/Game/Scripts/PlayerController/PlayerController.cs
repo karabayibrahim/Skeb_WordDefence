@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("LevelIndex")>1)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + PlayerPrefs.GetInt("LevelIndex") * 10);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + PlayerPrefs.GetInt("LevelIndex") * 5);
         }
     }
 }
