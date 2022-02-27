@@ -73,14 +73,6 @@ public class UIManager : MonoBehaviour
         //    //    AnswerControl();
         //    //}
         //}
-        if (GameManager.Instance.GameState==GameState.FAIL)
-        {
-            _active = true;
-        }
-        else if (GameManager.Instance.GameState == GameState.WIN)
-        {
-            _active = true;
-        }
         BarProgress();
         StringLeght();
     }
@@ -192,10 +184,12 @@ public class UIManager : MonoBehaviour
 
     public void FailStatus()
     {
+        _active = true;
         StartCoroutine(FailTimer());
     }
     public void WinStatus()
     {
+        _active = true;
         StartCoroutine(WinTimer());
     }
     public void NextLevel()

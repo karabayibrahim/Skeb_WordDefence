@@ -76,6 +76,7 @@ public class NpcController : MonoBehaviour
                 _anim.SetLayerWeight(1, 1);
                 break;
             case NpcState.DEAD:
+                _chase = true;
                 _deadStatus = true;
                 Speed = 0f;
                 gameObject.GetComponentInChildren<Renderer>().material.color = new Color(87f / 255f, 87f / 255f, 87f / 255f);
@@ -198,7 +199,9 @@ public class NpcController : MonoBehaviour
         }
         if (other.gameObject.tag == "Car")
         {
-
+            Debug.Log(gameObject.GetComponent<Rigidbody>());
+            var rnd = UnityEngine.Random.Range(25, 35);
+            transform.DOMoveZ(transform.position.z + rnd, 1f).OnComplete(() => this.enabled = false);
             NpcState = NpcState.DEAD;
 
         }
@@ -225,12 +228,12 @@ public class NpcController : MonoBehaviour
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 20f && Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 50f)
             {
-                var rnd = UnityEngine.Random.Range(10f, 25f);
+                var rnd = UnityEngine.Random.Range(17f, 25f);
                 Speed = rnd;
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) > 50f)
             {
-                var rnd = UnityEngine.Random.Range(23f, 30f);
+                var rnd = UnityEngine.Random.Range(20f, 32f);
                 Speed = rnd;
             }
             else if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 20f)
@@ -287,8 +290,11 @@ public class NpcController : MonoBehaviour
 
     private void FinishStatus()
     {
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        NpcState = NpcState.IDLE;
+        //gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        if (NpcState!=NpcState.DEAD)
+        {
+            NpcState = NpcState.IDLE;
+        }
         //this.enabled = false;
     }
 

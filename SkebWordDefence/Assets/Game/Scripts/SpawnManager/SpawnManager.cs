@@ -19,7 +19,7 @@ public class SpawnManager : ScriptableObject
     public void SpawnObjectMethod()
     {
         float PozX = Random.Range(-12, 12);
-        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 150, GameManager.Instance.Player.transform.position.z +200f);
+        float PozZ = Random.Range(GameManager.Instance.Player.transform.position.z + 150, GameManager.Instance.Player.transform.position.z +140f);
         var newNpc = Instantiate(SpawnObject, new Vector3(PozX, 0, PozZ), Quaternion.identity);
         newNpc.transform.localScale = new Vector3(0, 0, 0);
         newNpc.transform.DOScale(4.25f, 1f);

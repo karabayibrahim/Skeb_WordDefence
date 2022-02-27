@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 8
+  lineControl: 0
   _deadStatus: 0
   AttackTower: {fileID: 0}
 --- !u!95 &9181768988073271407
@@ -79,10 +80,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.16526651
+  m_Radius: 0.23203802
   m_Height: 1.6890976
   m_Direction: 1
-  m_Center: {x: 0, y: 0.80394685, z: 0.027374268}
+  m_Center: {x: 0.008813947, y: 0.80394685, z: 0.027374268}
 --- !u!54 &49198168646300601
 Rigidbody:
   m_ObjectHideFlags: 0

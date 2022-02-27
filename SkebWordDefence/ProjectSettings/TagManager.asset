@@ -11,6 +11,7 @@ TagManager:
   - BLaser
   - MLaser
   - Car
+  - Ground
   layers:
   - Default
   - TransparentFX
