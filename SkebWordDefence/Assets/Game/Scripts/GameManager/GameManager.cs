@@ -26,6 +26,7 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField] private int _levelIndex = 0;
     void Awake()
     {
+        GameState = GameState.START;
         _levelIndex = PlayerPrefs.GetInt("LevelIndex");
         Debug.Log(LevelIndex);
         InvokeRepeating("SpawnNpc", 0, 10f);

@@ -60,7 +60,7 @@ public class NpcController : MonoBehaviour
             case NpcState.IDLE:
                 _deadStatus = true;
                 _attackControl = false;
-                Speed = 0;
+                Speed = 0f;
                 _anim.CrossFade("Idle", 0.05f);
                 _anim.SetLayerWeight(1, 0);
                 break;
@@ -82,6 +82,8 @@ public class NpcController : MonoBehaviour
                 gameObject.GetComponentInChildren<Renderer>().material.color = new Color(87f / 255f, 87f / 255f, 87f / 255f);
                 _anim.CrossFade("Dead", 0.05f);
                 _anim.SetLayerWeight(1, 0);
+                CancelInvoke();
+                Destroy(gameObject, 4f);
                 break;
             default:
                 break;
@@ -183,7 +185,7 @@ public class NpcController : MonoBehaviour
     {
         if (other.gameObject.tag == "Tower")
         {
-            if (GameManager.Instance.GameState != GameState.FAIL)
+            if (GameManager.Instance.GameState == GameState.START)
             {
                 AttackTower = other.GetComponent<TowerG>();
                 NpcState = NpcState.ATTACK;
@@ -219,7 +221,7 @@ public class NpcController : MonoBehaviour
 
     private void PlayerControl()
     {
-        if (!_attackControl && !_deadStatus&&!_wrongStatus)
+        if (!_attackControl && !_deadStatus && !_wrongStatus)
         {
             if (Vector3.Distance(gameObject.transform.position, GameManager.Instance.Player.transform.position) < 5f)
             {
@@ -291,7 +293,7 @@ public class NpcController : MonoBehaviour
     private void FinishStatus()
     {
         //gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        if (NpcState!=NpcState.DEAD)
+        if (NpcState != NpcState.DEAD)
         {
             NpcState = NpcState.IDLE;
         }
