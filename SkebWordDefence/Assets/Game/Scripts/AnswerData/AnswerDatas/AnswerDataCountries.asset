@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
   m_Name: AnswerDataCountries
   m_EditorClassIdentifier: 
-  Answers: Afghanistan Albania Algeria Andorra Angola Anguilla Antigua & Barbuda
+  Answers: ' Afghanistan Albania Algeria Andorra Angola Anguilla Antigua & Barbuda
     Argentina Armenia Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados
     Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bosnia & Herzegovina Botswana
     Brazil Brunei Darussalam Bulgaria Burkina Faso Burundi Cambodia Cameroon Canada
@@ -22,7 +22,7 @@ MonoBehaviour:
     Eritrea Estonia Eswatini Ethiopia Fiji Finland France French Guiana Gabon Gambia
     Georgia Germany Ghana Great Britain Greece Grenada Guadeloupe Guatemala Guinea
     Guinea-Bissau Guyana Haiti Honduras Hungary Iceland India Indonesia Iran Iraq
-    Israel Italy Ivory Coast Cote d'Ivoire Jamaica Japan Jordan Kazakhstan Kenya
+    Israel Italy Ivory Coast Cote d''Ivoire Jamaica Japan Jordan Kazakhstan Kenya
     North Korea Korea South Korea Kosovo Kuwait Kyrgyz Republic Kyrgyzstan Laos Latvia
     Lebanon Lesotho Liberia Libya Liechtenstein Lithuania Luxembourg Madagascar Malawi
     Malaysia Maldives Mali Malta Martinique Mauritania Mauritius Mayotte Mexico Moldova
@@ -36,4 +36,4 @@ MonoBehaviour:
     Sri Lanka Sudan Suriname Sweden Switzerland Syria Tajikistan Tanzania Thailand
     Timor Leste Togo Trinidad & Tobago Tunisia Turkey Turkmenistan Turks & Caicos
     Islands Uganda Ukraine United Arab Emirates United States of America USA Uruguay
-    Uzbekistan Venezuela Vietnam Virgin Islands Yemen Zambia Zimbabwe
+    Uzbekistan Venezuela Vietnam Virgin Islands Yemen Zambia Zimbabwe '

@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
   m_Name: AnswerDataVegan
   m_EditorClassIdentifier: 
-  Answers: Corn Mushroom Broccoli Cucumber Red pepper red bell pepper Pineapple Tomato
-    Swede rutabaga Carrot Brussels sprout Pumpkin Cabbage Potato Eggplant Sweet potato
-    Turnip Courgette zucchini Green chilli Onion Lettuce Radish Pea Asparagus Celery
-    Green pepper French beans Spinach Beetroot beet Red chillies red chili peppers
-    Bean Cilantro coriander Artichoke Rosemary Bay leaves Mint leaves Basil Clove
-    Olive Shallot Turmeric Garlic Ginger Onion Spring onions green onions Lemongrass
-    Chives Green chili Asparagus Avocado BBQ vegies Bean Beetroot Beetroot and potato
-    salad Bok choy, pak choy or Chinese chard Broccoli Brussels sprouts Butternut
-    pumpkin in orange Cabbage Capsicum Carrot Carrot and parsnip muffins Cauliflower
-    Cauliflower and broccoli gratin Celeriac Celery Chickpea and couscous salad Chinese
-    broccoli or gai lan Chinese cabbage or wong bok Citrus coleslaw Corn or sweet
-    corn Crunchy Waldorf salad Cucumber Eggplant, aubergine brinjal Eggplant dip
-    Fennel Greek salad Guacamole Honeyed greens Italian pasta salad Lettuce Mexican
-    corn and tomato salad Mushroom Mustard and honey corn on the cob Onion Parsnip
-    Peas Potato Potato caesar salad Pumpkin Radish Ratatouille Salsa Sesame brussels
-    sprouts Spinach Squash Swede Sweet potato or kumera Tabbouleh Thai noodle salad
-    Tomato garlic bruschetta Turnip Vegetable stock Vegie curry Vegie lentil soup
-    Walnut lentil salad Warm roasted vegetable salad Zucchini courgette Artichoke
-    Ash gourd Asparagus Avocado Beetroot Bell pepper Bitter gourd Bok choy Broccoli
-    Cabbage Carrot Carry Cauliflower Celery Chayote Collard greens Coriander Corn
-    Dill Eggplant Endive Fennel Garlic Ginger Green bean Green chilies Green Plantain
-    Horseradish Knol khol Kohlrabi Lady Finger Leek Lemon Lettuce Lotus Stem Luffa
-    Mint Moringa Mushroom Okra Olive Onion Parsnip Pea Pepper Plantain Flower Potato
-    Pumpkin Radish Raw Mango Red cabbage RedChillies Spinach Spring onion Startfruit
-    Sweet potato Swiss chard Tinda Tomato Turnip Yam Zucchini
+  Answers: ' Corn Mushroom Broccoli Cucumber Red pepper red bell pepper Pineapple
+    Tomato Swede rutabaga Carrot Brussels sprout Pumpkin Cabbage Potato Eggplant
+    Sweet potato Turnip Courgette zucchini Green chilli Onion Lettuce Radish Pea
+    Asparagus Celery Green pepper French beans Spinach Beetroot beet Red chillies
+    red chili peppers Bean Cilantro coriander Artichoke Rosemary Bay leaves Mint
+    leaves Basil Clove Olive Shallot Turmeric Garlic Ginger Onion Spring onions green
+    onions Lemongrass Chives Green chili Asparagus Avocado BBQ vegies Bean Beetroot
+    Beetroot and potato salad Bok choy, pak choy or Chinese chard Broccoli Brussels
+    sprouts Butternut pumpkin in orange Cabbage Capsicum Carrot Carrot and parsnip
+    muffins Cauliflower Cauliflower and broccoli gratin Celeriac Celery Chickpea
+    and couscous salad Chinese broccoli or gai lan Chinese cabbage or wong bok Citrus
+    coleslaw Corn or sweet corn Crunchy Waldorf salad Cucumber Eggplant, aubergine
+    brinjal Eggplant dip Fennel Greek salad Guacamole Honeyed greens Italian pasta
+    salad Lettuce Mexican corn and tomato salad Mushroom Mustard and honey corn on
+    the cob Onion Parsnip Peas Potato Potato caesar salad Pumpkin Radish Ratatouille
+    Salsa Sesame brussels sprouts Spinach Squash Swede Sweet potato or kumera Tabbouleh
+    Thai noodle salad Tomato garlic bruschetta Turnip Vegetable stock Vegie curry
+    Vegie lentil soup Walnut lentil salad Warm roasted vegetable salad Zucchini courgette
+    Artichoke Ash gourd Asparagus Avocado Beetroot Bell pepper Bitter gourd Bok choy
+    Broccoli Cabbage Carrot Carry Cauliflower Celery Chayote Collard greens Coriander
+    Corn Dill Eggplant Endive Fennel Garlic Ginger Green bean Green chilies Green
+    Plantain Horseradish Knol khol Kohlrabi Lady Finger Leek Lemon Lettuce Lotus
+    Stem Luffa Mint Moringa Mushroom Okra Olive Onion Parsnip Pea Pepper Plantain
+    Flower Potato Pumpkin Radish Raw Mango Red cabbage RedChillies Spinach Spring
+    onion Startfruit Sweet potato Swiss chard Tinda Tomato Turnip Yam Zucchini '

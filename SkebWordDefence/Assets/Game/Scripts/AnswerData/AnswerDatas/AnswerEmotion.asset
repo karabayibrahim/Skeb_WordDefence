@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
   m_Name: AnswerEmotion
   m_EditorClassIdentifier: 
-  Answers: Adoring Admiration Accepting Alert Annoyed Antsy Anxious Apologetic Appalled
-    Awed Astonished Aroused Bashful Bemused Betrayed Bored Brave Brooding Bothered
-    Calm Certain Cautious Challenged Carefree Captivated Clueless Cold Cranky Cynical
-    Delighted Delirious Derisive Desperate Determined Disturbed Dopey Doubtful Down
-    Drained Edgy Elated Embarrassed Empathetic Energetic Engrossed Enlightened Envious
-    Excited Excluded Exhausted Flabbergasted Foolish Frazzled Free Fretful Frustrated
-    Furious Giddy Glad Gleeful Gloomy Grief Guarded Guilty Hankering Hesitant Hollow
-    Horror Horrified Hostile Humiliated Hurt Hysterical Indifferent Indignant Intense
-    Interested Intoxicated Irritated Jittery Jocular Jolly Joyful Jumpy Keen Lazy
-    Lethargic Lonely Lost Longing Lucky Lustful Melancholic Miserable Mortified Mournful
-    Nasty Needy Nervous Numb Obsessed Offended Optimistic Overwhelmed Panicked Paranoid
-    Passionate Peaceful Perky Perplexed Petrified Pessimistic Pleasured Positive
-    Powerful Proud Raged Rattled Reassured Regretful Rueful Reflective Relaxed Relieved
-    Remorseful Revolted Satisfied Selfconscious Selfish Sensual Sensitive Shameful
-    Shock Sluggish Smug Snappy Somber Speechless Stressed Stunned Submissive Suffering
-    Sympathetic Surprised Terror Tense Thankful Thoughtful Tormented Troubled Upbeat
-    Uptight Wary Woeful Wretched Zealous Absorbed Beguiled Busy Charmed Cheeredup
+  Answers: ' Adoring Admiration Accepting Alert Annoyed Antsy Anxious Apologetic
+    Appalled Awed Astonished Aroused Bashful Bemused Betrayed Bored Brave Brooding
+    Bothered Calm Certain Cautious Challenged Carefree Captivated Clueless Cold Cranky
+    Cynical Delighted Delirious Derisive Desperate Determined Disturbed Dopey Doubtful
+    Down Drained Edgy Elated Embarrassed Empathetic Energetic Engrossed Enlightened
+    Envious Excited Excluded Exhausted Flabbergasted Foolish Frazzled Free Fretful
+    Frustrated Furious Giddy Glad Gleeful Gloomy Grief Guarded Guilty Hankering Hesitant
+    Hollow Horror Horrified Hostile Humiliated Hurt Hysterical Indifferent Indignant
+    Intense Interested Intoxicated Irritated Jittery Jocular Jolly Joyful Jumpy Keen
+    Lazy Lethargic Lonely Lost Longing Lucky Lustful Melancholic Miserable Mortified
+    Mournful Nasty Needy Nervous Numb Obsessed Offended Optimistic Overwhelmed Panicked
+    Paranoid Passionate Peaceful Perky Perplexed Petrified Pessimistic Pleasured
+    Positive Powerful Proud Raged Rattled Reassured Regretful Rueful Reflective Relaxed
+    Relieved Remorseful Revolted Satisfied Selfconscious Selfish Sensual Sensitive
+    Shameful Shock Sluggish Smug Snappy Somber Speechless Stressed Stunned Submissive
+    Suffering Sympathetic Surprised Terror Tense Thankful Thoughtful Tormented Troubled
+    Upbeat Uptight Wary Woeful Wretched Zealous Absorbed Beguiled Busy Charmed Cheeredup
     Convulsed Delighted Diverted Engaged Entertained Glad Interested Involved Pleased
     Preoccupied Regaled Wowed Beaming Blessed Blissful Carefree Cheerful Confident
     Content Delighted Euphoric Exhilarated Glad Glowing Gratified Inclined Joy Pleased
@@ -63,4 +63,4 @@ MonoBehaviour:
     Determined Crazy Bashful Depressed Enraged Frightened Interested Shy Hopeful
     Regretful Scared Stubborn Thirsty Guilty Nervous Embarrassed Disgusted Proud
     Ecstatic Lonely Frustrated Hurt Hungry Tired Smug Thoughtful Pained Optimistic
-    Relieved Puzzled Shocked Joyful Sleepy Excited Skeptical Bad Worried
+    Relieved Puzzled Shocked Joyful Sleepy Excited Skeptical Bad Worried '

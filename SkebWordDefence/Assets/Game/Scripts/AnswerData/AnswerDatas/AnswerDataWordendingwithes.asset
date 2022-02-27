@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
   m_Name: AnswerDataWordendingwithes
   m_EditorClassIdentifier: 
-  Answers: aardwolves abacuses abalones abamperes abases abashes abates abatises
+  Answers: ' aardwolves abacuses abalones abamperes abases abashes abates abatises
     abattises abbacies abbes abbesses abbotcies abbreviates abdicates abducentes
     abduces abductees abductores abeles aberrances aberrancies abeyances abeyancies
     abhenries abhorrences abidances abides abilities abiogeneses abioses abjectnesses
@@ -2994,4 +2994,4 @@ MonoBehaviour:
     zoographies zoolatries zoologies zoometries zoonoses zoophiles zoophilies zoophobes
     zoophytes zoospores zootomies zorilles zouaves zygapophyses zygomorphies zygoses
     zygosities zygospores zygotenes zygotes zymases zymes zymogenes zymologies zymolyses
-    zymoses zymurgies
+    zymoses zymurgies  '

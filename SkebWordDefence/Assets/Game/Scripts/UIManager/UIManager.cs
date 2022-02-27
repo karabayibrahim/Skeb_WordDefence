@@ -46,8 +46,12 @@ public class UIManager : MonoBehaviour
     private Tween WrongColor;
     void Start()
     {
+        if (PlayerPrefs.GetInt("LevelIndex")==1)
+        {
+            PlayerPrefs.SetInt("LevelText", 1);
+        }
         AdjustQuestionText();
-        LevelText.text = "LEVEL" + " " + (PlayerPrefs.GetInt("LevelIndex")).ToString();
+        AdjustLevelText();
         RestartButton.onClick.AddListener(RestartStatus);
         RetryButton.onClick.AddListener(RestartStatus);
         NextButton.onClick.AddListener(NextLevel);
@@ -80,6 +84,11 @@ public class UIManager : MonoBehaviour
     public void DeSelect()
     {
         _active = true;
+    }
+
+    private void AdjustLevelText()
+    {
+        LevelText.text = "LEVEL" + " " + PlayerPrefs.GetInt("LevelText").ToString();
     }
 
     public void AnswerControl()
@@ -115,7 +124,7 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
-        
+
 
     }
 
@@ -126,13 +135,13 @@ public class UIManager : MonoBehaviour
         TrueColor.Kill();
         Wrong.SetActive(true);
         AnswerText.SetActive(false);
-        WrongTween=AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
-        {
-            Wrong.SetActive(false);
-            AnswerText.SetActive(true);
-        });
+        WrongTween = AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+          {
+              Wrong.SetActive(false);
+              AnswerText.SetActive(true);
+          });
 
-        WrongColor=AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
+        WrongColor = AnswerPanel.GetComponent<Image>().DOColor(new Color(248f / 255f, 107f / 255f, 107f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
         AnswerInput.text = "";
     }
 
@@ -142,12 +151,12 @@ public class UIManager : MonoBehaviour
         WrongColor.Kill();
         TrueA.SetActive(true);
         AnswerText.SetActive(false);
-        TrueTween=AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
-        {
-            TrueA.SetActive(false);
-            AnswerText.SetActive(true);
-        });
-        TrueColor=AnswerPanel.GetComponent<Image>().DOColor(new Color(58f / 255f, 255f / 255f, 19f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
+        TrueTween = AnswerPanel.transform.DOScale(1.5f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+          {
+              TrueA.SetActive(false);
+              AnswerText.SetActive(true);
+          });
+        TrueColor = AnswerPanel.GetComponent<Image>().DOColor(new Color(58f / 255f, 255f / 255f, 19f / 255f), 0.3f).SetLoops(2, LoopType.Yoyo);
     }
 
     public void OpenKeyboard()
@@ -179,7 +188,7 @@ public class UIManager : MonoBehaviour
 
     private void AdjustQuestionText()
     {
-        QuestText.text = GameManager.Instance.QuestionData.Questions[(PlayerPrefs.GetInt("LevelIndex")-1)];
+        QuestText.text = GameManager.Instance.QuestionData.Questions[(PlayerPrefs.GetInt("LevelIndex") - 1)];
     }
 
     public void FailStatus()
@@ -194,14 +203,17 @@ public class UIManager : MonoBehaviour
     }
     public void NextLevel()
     {
-        PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex")+1));
+        PlayerPrefs.SetInt("LevelText", PlayerPrefs.GetInt("LevelText") + 1);
+        PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex") + 1));
         if (PlayerPrefs.GetInt("LevelIndex") > 17)
         {
-            SceneManager.LoadScene("Level" + UnityEngine.Random.Range(5, 17));
+            var rnd = UnityEngine.Random.Range(5, 17);
+            PlayerPrefs.SetInt("LevelIndex", rnd);
+            SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("LevelIndex"));
         }
         else
         {
-
+            Debug.Log("else");
             SceneManager.LoadScene("Level" + (PlayerPrefs.GetInt("LevelIndex")));
         }
     }
@@ -227,7 +239,7 @@ public class UIManager : MonoBehaviour
 
     private void BarProgress()
     {
-        _newDistance= Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
+        _newDistance = Vector3.Distance(GameManager.Instance.Player.transform.position, GameManager.Instance.Finish.transform.position);
         Bar.fillAmount = Mathf.InverseLerp(0, _fullDisntance, _newDistance);
         Slice.rectTransform.anchorMin = new Vector2(Slice.rectTransform.anchorMin.x, Bar.fillAmount);
         Slice.rectTransform.anchorMax = new Vector2(Slice.rectTransform.anchorMax.x, Bar.fillAmount);

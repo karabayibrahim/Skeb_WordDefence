@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd539b312e08d34a9a0f5e0427b9f56, type: 3}
   m_Name: AnswerDataPopsingers
   m_EditorClassIdentifier: 
-  Answers: Drake Olivia Rodrigo The Weeknd Taylor Swift Morgan Wallen Ariana Grande
+  Answers: ' Drake Olivia Rodrigo The Weeknd Taylor Swift Morgan Wallen Ariana Grande
     Doja Cat Justin Bieber Luke Combs Pop Smoke Dua Lipa BTS Billie Eilish Lil Baby
     The Kid LAROI Bad Bunny Lil Durk Polo G Lil Nas X Juice WRLD Megan Thee Stallion
     Rod Wave DaBaby Kanye West Moneybagg Yo Post Malone Chris Stapleton Ed Sheeran
@@ -24,6 +24,6 @@ MonoBehaviour:
     Georgia Line Gunna Anderson Paak Khalid Maroon 5 Lewis Capaldi Queen Ava Max
     Tate McRae Jason Aldean Kane Brown Migos Elton John Carrie Underwood King Von
     Saweetie Michael Jackson AC/DC Kali Uchis XXXTENTACION Miley Cyrus blackbear
-    Lee Brice Guns N' Roses Mariah Carey Eagles Sam Smith Yung Bleu Miranda Lambert
+    Lee Brice Guns N'' Roses Mariah Carey Eagles Sam Smith Yung Bleu Miranda Lambert
     Imagine Dragons Trippie Redd CJ Playboi Carti Sam Hunt Jhene Aiko Eric Church
-    Adele Creedence Clearwater Revival
+    Adele Creedence Clearwater Revival '

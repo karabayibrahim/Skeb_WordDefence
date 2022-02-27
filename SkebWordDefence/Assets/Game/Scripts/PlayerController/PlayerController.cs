@@ -118,9 +118,9 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerPos()
     {
-        if (PlayerPrefs.GetInt("LevelIndex")>1&& PlayerPrefs.GetInt("LevelIndex") < 7)
+        if (PlayerPrefs.GetInt("LevelIndex")>1)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + PlayerPrefs.GetInt("LevelIndex") * 3);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + PlayerPrefs.GetInt("LevelIndex") * 2);
         }
     }
 }

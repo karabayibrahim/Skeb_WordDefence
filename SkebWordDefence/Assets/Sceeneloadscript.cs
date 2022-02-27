@@ -15,7 +15,6 @@ public class Sceeneloadscript : MonoBehaviour
         //    FB.ActivateApp();
 
         //GameAnalyticsSDK.GameAnalytics.Initialize();
-
         if (PlayerPrefs.HasKey("LevelIndex"))
         {
             if (PlayerPrefs.GetInt("LevelIndex") > 17)
