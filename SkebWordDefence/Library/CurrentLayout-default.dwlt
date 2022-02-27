@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 133
+  controlID: 123
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 134
+  controlID: 124
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 135
+  controlID: 125
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 136
+  controlID: 126
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,7 +386,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
       y: 21
       width: 644
       height: 630
-    m_Scale: {x: 0.2853261, y: 0.2853261}
+    m_Scale: {x: 0.29483697, y: 0.29483697}
     m_Translation: {x: 322, y: 315}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -407,12 +407,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1128.5333
-      y: -1104
-      width: 2257.0667
-      height: 2208
+      x: -1092.129
+      y: -1068.3871
+      width: 2184.258
+      height: 2136.7742
     m_MinimalGUI: 1
-  m_defaultScale: 0.2853261
+  m_defaultScale: 0.29483697
   m_LastWindowPixelSize: {x: 644, y: 651}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -450,21 +450,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 769ae9fff2cbe9ff165beafffc8aeaff428beaff90beeaff2a95edff9422eeffe268eeff92adeeff9430efffba71effffa2df0ff0e31f0ffb825f1ffd89af1ff00d5f1ff6c0df2ff2478f2ff84dff2ff4c43f3ffc874f3ffaea4f3ff6ac0f5ff3a0af6ff4252f6ffaadff6fffe25f7ff94f3f7ff0e7af8ff1abdf8ff5ebdf8ff70c0f8ff9243f9ff1ac3f9ff5e3ffaff047dfaffa2f5faffb031fbffa01cfcff5a8efcffe0c6fcffb0fdfcffc0b9fdff40edfdffbee3feff56cbffffbafaffff6afbffff244401007445010036460100024701005248010014490100
+      m_ExpandedIDs: 6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Player
-        m_OriginalName: Player
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 84244
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.14386576, y: -0.5855724, z: 0.10655638, w: 0.7906034}
     speed: 2
-    m_Value: {x: 0.14386573, y: -0.5855723, z: 0.106556356, w: 0.7906032}
+    m_Value: {x: -0.14386576, y: 0.5855724, z: -0.10655637, w: -0.7906034}
   m_Size:
     m_Target: 167.2219
     speed: 2
@@ -760,19 +760,19 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Game/Scripts/AnswerData/AnswerDatas
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets
+  - Assets/Game/Scripts/AnswerData/AnswerDatas
   m_LastFoldersGridSize: 51
   m_LastProjectPath: C:\Users\Ibrahim Karabay\Documents\GitHub\Skeb_WordDefence\SkebWordDefence
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a8380000
-    m_LastClickedID: 14504
+    scrollPos: {x: 0, y: 662}
+    m_SelectedIDs: 12390000
+    m_LastClickedID: 14610
     m_ExpandedIDs: 000000005438000056380000583800005a3800005c3800005e38000060380000623800006438000066380000683800006a3800006c3800006e38000070380000723800007438000076380000783800007a3800007c3800007e38000080380000823800008438000086380000883800008a3800008c3800008e38000090380000923800009438000096380000983800009a3800009c3800009e380000a0380000a2380000a4380000a838000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
