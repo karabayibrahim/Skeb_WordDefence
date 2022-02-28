@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 123
+  controlID: 133
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 124
+  controlID: 134
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 125
+  controlID: 135
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 126
+  controlID: 136
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,7 +386,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
       y: 21
       width: 644
       height: 630
-    m_Scale: {x: 0.29483697, y: 0.29483697}
+    m_Scale: {x: 0.2853261, y: 0.2853261}
     m_Translation: {x: 322, y: 315}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -407,12 +407,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1092.129
-      y: -1068.3871
-      width: 2184.258
-      height: 2136.7742
+      x: -1128.5333
+      y: -1104
+      width: 2257.0667
+      height: 2208
     m_MinimalGUI: 1
-  m_defaultScale: 0.29483697
+  m_defaultScale: 0.2853261
   m_LastWindowPixelSize: {x: 644, y: 651}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -450,7 +450,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afbffff
+      m_ExpandedIDs: ec3afaff54c8faffa00efbfff665fbff9406fcff3051fcff40cdfcff3612fdffac8efdff5400feff4aa4feff38eefeffce59ffff068dffffd8c2ffff1af7ffff66f7ffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -560,11 +560,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.14386576, y: -0.5855724, z: 0.10655638, w: 0.7906034}
     speed: 2
-    m_Value: {x: -0.14386576, y: 0.5855724, z: -0.10655637, w: -0.7906034}
+    m_Value: {x: 0.14386573, y: -0.5855723, z: 0.106556356, w: 0.7906032}
   m_Size:
-    m_Target: 167.2219
+    m_Target: 217.76637
     speed: 2
-    m_Value: 167.2219
+    m_Value: 217.76637
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -760,19 +760,19 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Game/Scripts/AnswerData/AnswerDatas
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets/Game/Scripts/AnswerData/AnswerDatas
+  - Assets/Scenes
   m_LastFoldersGridSize: 51
   m_LastProjectPath: C:\Users\Ibrahim Karabay\Documents\GitHub\Skeb_WordDefence\SkebWordDefence
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 662}
-    m_SelectedIDs: 12390000
-    m_LastClickedID: 14610
+    scrollPos: {x: 0, y: 2086}
+    m_SelectedIDs: a4390000
+    m_LastClickedID: 14756
     m_ExpandedIDs: 000000005438000056380000583800005a3800005c3800005e38000060380000623800006438000066380000683800006a3800006c3800006e38000070380000723800007438000076380000783800007a3800007c3800007e38000080380000823800008438000086380000883800008a3800008c3800008e38000090380000923800009438000096380000983800009a3800009c3800009e380000a0380000a2380000a4380000a838000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

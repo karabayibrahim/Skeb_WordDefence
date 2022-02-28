@@ -205,9 +205,9 @@ public class UIManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("LevelText", PlayerPrefs.GetInt("LevelText") + 1);
         PlayerPrefs.SetInt("LevelIndex", (PlayerPrefs.GetInt("LevelIndex") + 1));
-        if (PlayerPrefs.GetInt("LevelIndex") > 17)
+        if (PlayerPrefs.GetInt("LevelIndex") > 16)
         {
-            var rnd = UnityEngine.Random.Range(5, 17);
+            var rnd = UnityEngine.Random.Range(5, 16);
             PlayerPrefs.SetInt("LevelIndex", rnd);
             SceneManager.LoadScene("Level" + PlayerPrefs.GetInt("LevelIndex"));
         }
